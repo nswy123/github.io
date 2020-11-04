@@ -12,13 +12,6 @@
     <guid>https://nswy123.github.io/latex/</guid>
     <description><![CDATA[LaTeX_notes]]></description>
 </item><item>
-    <title>2020.10.17晚杂记-记得回来的路</title>
-    <link>https://nswy123.github.io/basketball/</link>
-    <pubDate>Sat, 17 Oct 2020 23:31:40 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://nswy123.github.io/basketball/</guid>
-    <description><![CDATA[2020.10.17晚杂记-记得回来的路]]></description>
-</item><item>
     <title>Matlab homework archieve</title>
     <link>https://nswy123.github.io/matlab/</link>
     <pubDate>Wed, 14 Oct 2020 16:10:40 &#43;0800</pubDate>
@@ -74,5 +67,12 @@
     <author>作者</author>
     <guid>https://nswy123.github.io/earth/</guid>
     <description><![CDATA[北京时间1977年9月5日20:56旅行者一号]]></description>
+</item><item>
+    <title>安装fctix5框架和rime输入法</title>
+    <link>https://nswy123.github.io/fcitx5/</link>
+    <pubDate>Sat, 05 Sep 2020 22:27:20 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/fcitx5/</guid>
+    <description><![CDATA[安装fctix5框架和rime输入法]]></description>
 </item></channel>
 </rss>
