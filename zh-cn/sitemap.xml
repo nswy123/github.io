@@ -2,6 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://nswy123.github.io/doom-emacs-configure/</loc><lastmod>2020-11-04T12:15:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://nswy123.github.io/latex/</loc><lastmod>2020-10-18T09:44:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://nswy123.github.io/matlab/</loc><lastmod>2020-10-30T21:18:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://nswy123.github.io/manjaro_kde_turnoff_gpu/</loc><lastmod>2020-10-04T15:08:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
@@ -21,7 +22,7 @@
             <loc>https://nswy123.github.io/latte-dock/</loc><lastmod>2020-03-03T17:13:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://nswy123.github.io/markdown-reference/</loc><lastmod>2020-02-20T21:16:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://nswy123.github.io/basic-markdown-syntax/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://nswy123.github.io/categories/</loc><lastmod>2020-10-30T21:18:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://nswy123.github.io/categories/</loc><lastmod>2020-11-04T12:15:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://nswy123.github.io/en/categories/"
@@ -34,10 +35,10 @@
                     hreflang="zh-cn"
                     href="https://nswy123.github.io/categories/"
                     /></url><url>
-            <loc>https://nswy123.github.io/tags/latex/</loc><lastmod>2020-10-18T09:44:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://nswy123.github.io/categories/latex/</loc><lastmod>2020-10-18T09:44:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://nswy123.github.io/tags/notes/</loc><lastmod>2020-10-30T21:18:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://nswy123.github.io/</loc><lastmod>2020-10-30T21:18:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://nswy123.github.io/tags/doom-emacs/</loc><lastmod>2020-11-04T12:15:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://nswy123.github.io/categories/emacs/</loc><lastmod>2020-11-04T12:15:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://nswy123.github.io/tags/manjaro/</loc><lastmod>2020-11-04T12:15:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://nswy123.github.io/</loc><lastmod>2020-11-04T12:15:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://nswy123.github.io/en/"
@@ -50,8 +51,8 @@
                     hreflang="zh-cn"
                     href="https://nswy123.github.io/"
                     /></url><url>
-            <loc>https://nswy123.github.io/posts/</loc><lastmod>2020-10-30T21:18:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://nswy123.github.io/tags/</loc><lastmod>2020-10-30T21:18:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://nswy123.github.io/posts/</loc><lastmod>2020-11-04T12:15:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://nswy123.github.io/tags/</loc><lastmod>2020-11-04T12:15:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://nswy123.github.io/en/tags/"
@@ -64,6 +65,9 @@
                     hreflang="zh-cn"
                     href="https://nswy123.github.io/tags/"
                     /></url><url>
+            <loc>https://nswy123.github.io/tags/latex/</loc><lastmod>2020-10-18T09:44:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://nswy123.github.io/categories/latex/</loc><lastmod>2020-10-18T09:44:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://nswy123.github.io/tags/notes/</loc><lastmod>2020-10-30T21:18:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://nswy123.github.io/categories/ecte955/</loc><lastmod>2020-10-30T21:18:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://nswy123.github.io/tags/matlab/</loc><lastmod>2020-10-30T21:18:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://nswy123.github.io/tags/kde/</loc><lastmod>2020-10-04T15:08:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
@@ -73,7 +77,6 @@
             <loc>https://nswy123.github.io/tags/golang%E5%9F%BA%E7%A1%80/</loc><lastmod>2020-09-21T22:53:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://nswy123.github.io/tags/beancounts/</loc><lastmod>2020-09-21T16:30:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://nswy123.github.io/categories/beancounts/</loc><lastmod>2020-09-21T16:30:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://nswy123.github.io/tags/doom-emacs/</loc><lastmod>2020-09-21T16:30:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://nswy123.github.io/tags/fava/</loc><lastmod>2020-09-21T16:30:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://nswy123.github.io/tags/%E5%A4%8D%E5%BC%8F%E8%AE%B0%E8%B4%A6/</loc><lastmod>2020-09-21T16:30:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://nswy123.github.io/tags/%E9%9A%8F%E7%AC%94/</loc><lastmod>2020-09-08T21:50:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -86,8 +89,6 @@
             <loc>https://nswy123.github.io/tags/blog/</loc><lastmod>2020-05-19T19:10:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://nswy123.github.io/tags/hexo/</loc><lastmod>2020-05-19T19:10:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://nswy123.github.io/tags/nodejs/</loc><lastmod>2020-05-19T19:10:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://nswy123.github.io/categories/emacs/</loc><lastmod>2020-05-18T21:29:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://nswy123.github.io/tags/manjaro/</loc><lastmod>2020-10-03T22:10:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://nswy123.github.io/tags/spacemacs/</loc><lastmod>2020-05-18T21:29:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://nswy123.github.io/tags/%E6%9C%BA%E5%9C%BA/</loc><lastmod>2020-10-03T22:10:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://nswy123.github.io/tags/dock/</loc><lastmod>2020-03-03T17:13:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
