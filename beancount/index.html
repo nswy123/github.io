@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Beancounts(待更新) - nswy123</title><meta name="Description" content="Beancounts复式记账"><meta property="og:title" content="Beancounts(待更新)" />
+        <title>Beancounts(正更新) - nswy123</title><meta name="Description" content="Beancounts复式记账"><meta property="og:title" content="Beancounts(正更新)" />
 <meta property="og:description" content="Beancounts复式记账" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://nswy123.github.io/beancount/" />
@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://nswy123.github.io/"/>
 
-<meta name="twitter:title" content="Beancounts(待更新)"/>
+<meta name="twitter:title" content="Beancounts(正更新)"/>
 <meta name="twitter:description" content="Beancounts复式记账"/>
 <meta name="application-name" content="nswy123">
 <meta name="apple-mobile-web-app-title" content="nswy123"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -24,12 +24,12 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Beancounts(待更新)",
+        "headline": "Beancounts(正更新)",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/nswy123.github.io\/beancount\/"
-        },"image": ["https:\/\/nswy123.github.io\/assets\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "复式记账, Beancounts, fava, doom-emacs","wordcount":  13 ,
+        },"image": ["https:\/\/nswy123.github.io\/assets\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "复式记账, Beancounts, fava, doom-emacs","wordcount":  1520 ,
         "url": "https:\/\/nswy123.github.io\/beancount\/","datePublished": "2020-09-21T16:30:40+08:00","dateModified": "2020-09-21T16:30:40+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "nswy123","logo": "https:\/\/nswy123.github.io\/assets\/images\/head.jpg"},"author": {
@@ -108,10 +108,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Beancounts(待更新)</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">Beancounts(正更新)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://nswy123.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>nswy123</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/beancounts/"><i class="far fa-folder fa-fw"></i>Beancounts</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-21">2020-09-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 13 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/beancount/" class="leancloud_visitors" data-flag-title="Beancounts(待更新)">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-09-21">2020-09-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1520 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/beancount/" class="leancloud_visitors" data-flag-title="Beancounts(正更新)">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -121,10 +121,295 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
+    <li><a href="#beancount">Beancount</a>
+      <ul>
+        <li><a href="#会计恒等式">会计恒等式</a></li>
+        <li><a href="#beancount简介">Beancount简介</a></li>
+        <li><a href="#beancount简单语法介绍">Beancount简单语法介绍</a></li>
+        <li><a href="#基本借贷记账">基本借贷记账</a>
+          <ul>
+            <li><a href="#beancount基本语法">Beancount基本语法</a></li>
+          </ul>
+        </li>
+        <li><a href="#货币转换">货币转换</a></li>
+        <li><a href="#借贷管理">借贷管理</a></li>
+        <li><a href="#未完待续">未完待续&hellip;</a></li>
+      </ul>
+    </li>
     <li><a href="#参考文献">参考文献：</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="参考文献">参考文献：</h2>
+            </div><div class="content" id="content"><h2 id="beancount">Beancount</h2>
+<h3 id="会计恒等式">会计恒等式</h3>
+<p>Simple:
+Assets = Liabilities + Equity(Net Assets)
+资产 = 负债 + 权益（净资产）</p>
+<h3 id="beancount简介">Beancount简介</h3>
+<p>Beancounts以账户为中心，除以上三部分再增加两个类别，收入和支出，既五个类别:</p>
+<ul>
+<li>Assets 资产</li>
+<li>Liabilities 负债</li>
+<li>Equity 权益（净资产）</li>
+<li>Expenses 支出</li>
+<li>Income 收入
+Beancount也可以自定义账户，以树形组织，例如:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Assets:Cash:JPY
+Assets:Cash:USD
+Assets:Bank:CH:UBS
+Assets:Bank:CN:BoC
+Assets:Bank:US:Chase:Checking
+Assets:Bank:US:Chase:Saving
+Assets:Bank:JP:SMBC:JPY
+Assets:Bank:JP:SMBC:USD
+Assets:Broker:US:IB
+Assets:Points:Airline:JAL
+Assets:Points:Airline:United
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="beancount简单语法介绍">Beancount简单语法介绍</h3>
+<ul>
+<li>必须声明开户时间，格式YYY-mm-dd</li>
+<li>关键词open，定义当前日期开户</li>
+<li>账户名称，格式用:隔开</li>
+<li>货币种类(可以省略)，一般用三个字母，如美元、日元和人民币分别为&quot;USD&quot;, &ldquo;JPY&rdquo;, &ldquo;CNY&rdquo;</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">2019-01-01 open Assets:Cash:JPY JPY
+2019-01-01 open Assets:Cash:USD USD
+2019-01-01 open Assets:Bank:CH:UBS CHF
+2019-01-01 open Assets:Bank:CN:BoC CNY
+2019-01-01 open Assets:Bank:US:Chase:Checking USD
+2019-01-01 open Assets:Bank:US:Chase:Saving USD
+2019-01-01 open Assets:Bank:JP:SMBC:JPY JPY
+2019-01-01 open Assets:Bank:JP:SMBC:USD USD
+2019-01-01 open Assets:Broker:US:IB USD, JPY, CHF
+2019-01-01 open Assets:Points:Airline:JAL P_JAL
+2019-01-01 open Assets:Points:Airline:United P_UA
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>负债类别账户，如信用卡，举例:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">2019-01-01 open Liabilities:CreditCard:US:Discover USD
+2019-01-01 open Liabilities:CreditCard:JP:Rakuten JPY
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>收入和支出类别也需要定义成一个账户，在语法上和资产、负债类的账户没有区别。举例:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">2019-01-01 open Expenses:Clothing
+2019-01-01 open Expenses:Food:Dinner
+2019-01-01 open Expenses:Transport:Airline
+2019-01-01 open Expenses:Transport:Railway
+2019-01-01 open Income:Salary
+2019-01-01 open Income:Rebate
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="基本借贷记账">基本借贷记账</h3>
+<p>复式记账又称为&quot;借贷记账&quot;，因为每条记录至少有一条借记(Debit)和一条贷记(Credit)，举例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">2019-01-01 * &#34;日本航空&#34; &#34;纽约-东京&#34;
+  Expenses:Transport:Airline 1000 USD
+  Liabilities:CreditCard:US:Discover -1000 USD
+</code></pre></td></tr></table>
+</div>
+</div><p>买了日本航空纽约-东京的机票，消费1000美元（贷记），付款的信用卡Discover扣款1000美元（借记）。</p>
+<h4 id="beancount基本语法">Beancount基本语法</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">YYYY-mm-dd * [&#34;payee&#34;] &#34;description&#34;
+  posting 1
+  posting 2
+  ...
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>第一行包括日期， * 后是收款人payee(可选)</p>
+</li>
+<li>
+<p>第二行开始以后每行要有两个缩进，包括帐户名、金额、货币，条目可以有多个
+Notice:要保证所有的条目的总和为0，因为花的钱和账户减少的钱数额一定是相同的,如:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">2019-01-01 * &#34;Walmart&#34; &#34;在超市买两件衣服和晚餐&#34;
+Expenses:Clothing 20 USD
+Expenses:Clothing 10 USD
+Expenses:Food:Dinner 10 USD
+Liabilities:CreditCard:US:Discover -40 USD
+</code></pre></td></tr></table>
+</div>
+</div><p>稍微复杂的例子:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>2016-01-01 * &ldquo;Google&rdquo; &ldquo;工资&rdquo;
+Assets:Bank:US:Chase:Checking 500 USD
+Assets:Bank:US:Chase:Saving 1839.35 USD
+Assets:Pension:US:401k:PreTax 419.23 USD
+Assets:Pension:US:401k:PreTax 209.62 USD
+Expenses:Health:Insurance:Dental 3.14 USD
+Expenses:Finance:Insurance:TermLife 7.67 USD
+Expenses:Health:Insurance:Vision 0.98 USD
+Expenses:Tax:US:Federal 763.26 USD
+Expenses:Tax:US:Medicare 60.84 USD
+Expenses:Tax:US:SocialSecurity 260.15 USD
+Expenses:Tax:US:State:NY 212.59 USD
+Expenses:Tax:US:City:NYC 131.57 USD
+Expenses:Tax:US:State:NYDisability 1.2 USD
+Income:Salary:Regular -4192.31 USD
+Income:Allowance:TermLife -7.67 USD
+Income:Salary:401kMatch -209.62 USD</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">大多数的情况是一进一出两个账户，正负金额会记两遍，Beancount提供金额插值功能，即若总和为0，在有N个账户的时候，只需要声明N-1个账户的金额。则上述第一个例子中:
+
+```Beancount
+2019-01-01 * &#34;日本航空&#34; &#34;纽约-东京&#34;
+Expenses:Transport:Airline 1000 USD
+Liabilities:CreditCard:US:Discover
+</code></pre></td></tr></table>
+</div>
+</div><p>Notice:在多个账户中需要写出每个的金额.
+所有Expenses类别的账户都是正数，所有Income类别的账户都是负数.这是Beancount及类似工具使用正数来表示借记（Debit），负数表示贷记（Credit）的结果。同理通常Assets类是正数，Liabilities类是负数</p>
+<h3 id="货币转换">货币转换</h3>
+<p>哪怕不出国，只要是记录了非主要货币类资产，譬如投资品，代金券，航空公司里程，那么就需要货币转换。</p>
+<ol>
+<li>工作货币
+例如:</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">option &#34;operating_currency&#34; &#34;JPY&#34;
+option &#34;operating_currency&#34; &#34;USD&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>定义了工作货币以后，在fava界面中可以看到工作货币单独列出的栏目。</p>
+<p>Beancount货币转换的语法有两种，一种是使用@记录单位货币的转换价格，例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">2019-01-01 * &#34;日本航空&#34; &#34;纽约-东京&#34;
+  Expenses:Transport:Airline 1000 USD @ 110 JPY
+  Liabilities:CreditCard:JP:Rakuten -110000 JPY
+</code></pre></td></tr></table>
+</div>
+</div><p>另一种方式更常用，使用@@记录转换后的总额：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">2019-01-01 * &#34;日本航空&#34; &#34;纽约-东京&#34;
+  Expenses:Transport:Airline 1000 USD @@ 110000 JPY
+  Liabilities:CreditCard:JP:Rakuten -110000 JPY
+</code></pre></td></tr></table>
+</div>
+</div><p>货币转换不一定只在一个账户上。下面的这个例子是以每点2.5日元的价格，买了10000日本航空里程，但是付款的信用卡是以美元计价的，所以两遍都可以转换为25000日元来平衡。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">2019-01-01 * &#34;日本航空&#34; &#34;购买里程&#34;
+  Assets:Points:Airline:JAL 10000 P_JAL @ 2.5 JPY
+  Liabilities:CreditCard:US:Discover -220.0 USD @@ 25000 JPY
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="借贷管理">借贷管理</h3>
+<p>复式记账的强大之处是每个账户都有状态，所有资金都可以操作</p>
+<h3 id="未完待续">未完待续&hellip;</h3>
+<h2 id="参考文献">参考文献：</h2>
 <p><a href="https://byvoid.com/zhs/blog/beancount-bookkeeping-1/" target="_blank" rel="noopener noreffer">Beyond the void</a></p>
 <p><a href="https://wzyboy.im/post/1063.html" target="_blank" rel="noopener noreffer">wzyboy&rsquo;s blog</a></p>
 <p><a href="https://blindwith.science/2019/07/444.html/" target="_blank" rel="noopener noreffer">blind with science</a></p></div><div class="post-footer" id="post-footer">
@@ -138,7 +423,7 @@
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nswy123.github.io/beancount/" data-title="Beancounts(待更新)" data-hashtags="复式记账,Beancounts,fava,doom-emacs"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nswy123.github.io/beancount/" data-title="Beancounts(待更新)"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nswy123.github.io/beancount/" data-title="Beancounts(正更新)" data-hashtags="复式记账,Beancounts,fava,doom-emacs"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nswy123.github.io/beancount/" data-title="Beancounts(正更新)"><i class="fab fa-weibo fa-fw"></i></a></span>
             </div>
         </div>
     </div>
