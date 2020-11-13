@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>rime - 标签 - nswy123</title>
+        <link>https://nswy123.github.io/tags/rime/</link>
+        <description>rime - 标签 - nswy123</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>nswy123@126.com (nswy123)</managingEditor>
+            <webMaster>nswy123@126.com (nswy123)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 05 Sep 2020 22:27:20 &#43;0800</lastBuildDate><atom:link href="https://nswy123.github.io/tags/rime/" rel="self" type="application/rss+xml" /><item>
+    <title>安装fctix5框架和rime输入法</title>
+    <link>https://nswy123.github.io/fcitx5/</link>
+    <pubDate>Sat, 05 Sep 2020 22:27:20 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/fcitx5/</guid>
+    <description><![CDATA[安装fctix5框架和rime输入法]]></description>
+</item></channel>
+</rss>

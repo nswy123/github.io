@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Blog - 分类 - nswy123</title>
+        <link>https://nswy123.github.io/categories/blog/</link>
+        <description>Blog - 分类 - nswy123</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>nswy123@126.com (nswy123)</managingEditor>
+            <webMaster>nswy123@126.com (nswy123)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 19 May 2020 19:10:10 &#43;0800</lastBuildDate><atom:link href="https://nswy123.github.io/categories/blog/" rel="self" type="application/rss+xml" /><item>
+    <title>配置hexo博客出错的问题及解决办法</title>
+    <link>https://nswy123.github.io/hexo_wrong/</link>
+    <pubDate>Tue, 19 May 2020 19:10:10 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/hexo_wrong/</guid>
+    <description><![CDATA[配置hexo博客出错的问题及解决办法]]></description>
+</item></channel>
+</rss>

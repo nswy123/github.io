@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>杂记 - 标签 - nswy123</title>
+        <link>https://nswy123.github.io/tags/%E6%9D%82%E8%AE%B0/</link>
+        <description>杂记 - 标签 - nswy123</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>nswy123@126.com (nswy123)</managingEditor>
+            <webMaster>nswy123@126.com (nswy123)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 10 Nov 2020 20:38:49 &#43;0800</lastBuildDate><atom:link href="https://nswy123.github.io/tags/%E6%9D%82%E8%AE%B0/" rel="self" type="application/rss+xml" /><item>
+    <title>2020-11-10杂记</title>
+    <link>https://nswy123.github.io/20201110_notes/</link>
+    <pubDate>Tue, 10 Nov 2020 20:38:49 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/20201110_notes/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>2020-11-09日随笔</title>
+    <link>https://nswy123.github.io/20201109-%E6%9D%82%E8%AE%B0/</link>
+    <pubDate>Mon, 09 Nov 2020 11:15:33 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/20201109-%E6%9D%82%E8%AE%B0/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
+</rss>

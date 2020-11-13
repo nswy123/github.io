@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Goinaction - 分类 - nswy123</title>
+        <link>https://nswy123.github.io/categories/goinaction/</link>
+        <description>Goinaction - 分类 - nswy123</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>nswy123@126.com (nswy123)</managingEditor>
+            <webMaster>nswy123@126.com (nswy123)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 09 Nov 2020 20:16:54 &#43;0800</lastBuildDate><atom:link href="https://nswy123.github.io/categories/goinaction/" rel="self" type="application/rss+xml" /><item>
+    <title>关于Go语言的介绍</title>
+    <link>https://nswy123.github.io/goinaction_section1/</link>
+    <pubDate>Mon, 09 Nov 2020 20:16:54 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/goinaction_section1/</guid>
+    <description><![CDATA[第一章.关于Go语言的介绍]]></description>
+</item></channel>
+</rss>

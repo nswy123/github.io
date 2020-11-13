@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>机场 - 标签 - nswy123</title>
+        <link>https://nswy123.github.io/tags/%E6%9C%BA%E5%9C%BA/</link>
+        <description>机场 - 标签 - nswy123</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>nswy123@126.com (nswy123)</managingEditor>
+            <webMaster>nswy123@126.com (nswy123)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 23 Mar 2020 17:13:20 &#43;0800</lastBuildDate><atom:link href="https://nswy123.github.io/tags/%E6%9C%BA%E5%9C%BA/" rel="self" type="application/rss+xml" /><item>
+    <title>Manjaro显卡驱动问题开机黑屏，配置源，机场etc</title>
+    <link>https://nswy123.github.io/manjaro-stuck/</link>
+    <pubDate>Mon, 23 Mar 2020 17:13:20 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/manjaro-stuck/</guid>
+    <description><![CDATA[Manjaro显卡驱动问题开机黑屏，配置源，机场etc]]></description>
+</item></channel>
+</rss>

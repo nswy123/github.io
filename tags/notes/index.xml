@@ -1,0 +1,78 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Notes - 标签 - nswy123</title>
+        <link>https://nswy123.github.io/tags/notes/</link>
+        <description>Notes - 标签 - nswy123</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>nswy123@126.com (nswy123)</managingEditor>
+            <webMaster>nswy123@126.com (nswy123)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 12 Nov 2020 21:09:47 &#43;0800</lastBuildDate><atom:link href="https://nswy123.github.io/tags/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>Matlab Lab6</title>
+    <link>https://nswy123.github.io/matlab_lab6/</link>
+    <pubDate>Thu, 12 Nov 2020 21:09:47 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/matlab_lab6/</guid>
+    <description><![CDATA[Matlab Lab6]]></description>
+</item><item>
+    <title>Go语言基础_指针</title>
+    <link>https://nswy123.github.io/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E6%8C%87%E9%92%88/</link>
+    <pubDate>Wed, 11 Nov 2020 14:33:55 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E6%8C%87%E9%92%88/</guid>
+    <description><![CDATA[Go语言基础_指针]]></description>
+</item><item>
+    <title>2020-11-10杂记</title>
+    <link>https://nswy123.github.io/20201110_notes/</link>
+    <pubDate>Tue, 10 Nov 2020 20:38:49 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/20201110_notes/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Go语言基础_function</title>
+    <link>https://nswy123.github.io/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_function/</link>
+    <pubDate>Mon, 09 Nov 2020 20:40:46 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_function/</guid>
+    <description><![CDATA[Go语言基础_function]]></description>
+</item><item>
+    <title>关于Go语言的介绍</title>
+    <link>https://nswy123.github.io/goinaction_section1/</link>
+    <pubDate>Mon, 09 Nov 2020 20:16:54 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/goinaction_section1/</guid>
+    <description><![CDATA[第一章.关于Go语言的介绍]]></description>
+</item><item>
+    <title>2020-11-09日随笔</title>
+    <link>https://nswy123.github.io/20201109-%E6%9D%82%E8%AE%B0/</link>
+    <pubDate>Mon, 09 Nov 2020 11:15:33 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/20201109-%E6%9D%82%E8%AE%B0/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Go语言基础_map</title>
+    <link>https://nswy123.github.io/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_map/</link>
+    <pubDate>Sun, 08 Nov 2020 20:34:36 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_map/</guid>
+    <description><![CDATA[Go语言基础_map]]></description>
+</item><item>
+    <title>Go语言基础_数组</title>
+    <link>https://nswy123.github.io/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E6%95%B0%E7%BB%84/</link>
+    <pubDate>Sun, 08 Nov 2020 19:09:13 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E6%95%B0%E7%BB%84/</guid>
+    <description><![CDATA[Go语言基础_数组]]></description>
+</item><item>
+    <title>Go语言基础_切片</title>
+    <link>https://nswy123.github.io/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E5%88%87%E7%89%87/</link>
+    <pubDate>Sun, 08 Nov 2020 19:09:06 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E5%88%87%E7%89%87/</guid>
+    <description><![CDATA[Go语言基础_切片]]></description>
+</item><item>
+    <title>LaTeX_notes</title>
+    <link>https://nswy123.github.io/latex/</link>
+    <pubDate>Sun, 18 Oct 2020 09:44:50 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/latex/</guid>
+    <description><![CDATA[LaTeX_notes]]></description>
+</item></channel>
+</rss>
