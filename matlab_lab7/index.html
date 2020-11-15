@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Matlab lab7 - nswy123</title><meta name="Description" content="Matlab lab7">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172653330-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-172653330-1');
+</script>
+<meta property="og:title" content="Matlab lab7" />
+<meta property="og:description" content="Matlab lab7" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nswy123.github.io/matlab_lab7/" />
+<meta property="og:image" content="https://nswy123.github.io/"/>
+<meta property="article:published_time" content="2020-11-15T18:49:36+08:00" />
+<meta property="article:modified_time" content="2020-11-15T18:49:36+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://nswy123.github.io/"/>
+
+<meta name="twitter:title" content="Matlab lab7"/>
+<meta name="twitter:description" content="Matlab lab7"/>
+<meta name="application-name" content="nswy123">
+<meta name="apple-mobile-web-app-title" content="nswy123"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://nswy123.github.io/matlab_lab7/" /><link rel="prev" href="https://nswy123.github.io/matlab_lab6/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="q5BcEw2yTxdK8dJmgEJzJ8-vts8kA165bdHVuqhs5qM" /><meta name="msvalidate.01" content="B0B44AE9BE225A80728C76B48480B504" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Matlab lab7",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/nswy123.github.io\/matlab_lab7\/"
+        },"image": ["https:\/\/nswy123.github.io\/assets\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Matlab, Notes","wordcount":  2781 ,
+        "url": "https:\/\/nswy123.github.io\/matlab_lab7\/","datePublished": "2020-11-15T18:49:36+08:00","dateModified": "2020-11-15T18:49:36+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "nswy123","logo": "https:\/\/nswy123.github.io\/assets\/images\/head.jpg"},"author": {
+                "@type": "Person",
+                "name": "nswy123"
+            },"description": "Matlab lab7"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="nswy123"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/nswy123" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="nswy123"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/nswy123" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Matlab lab7</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://nswy123.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>nswy123</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/ecte955/"><i class="far fa-folder fa-fw"></i>ECTE955</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-15">2020-11-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2781 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/matlab_lab7/" class="leancloud_visitors" data-flag-title="Matlab lab7">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#week8-ecte955-homework">Week8 ECTE955 Homework</a>
+      <ul>
+        <li><a href="#preface">Preface</a></li>
+        <li><a href="#exercise-2">Exercise 2</a>
+          <ul>
+            <li><a href="#task21">Task2.1</a></li>
+            <li><a href="#task22">Task2.2</a></li>
+            <li><a href="#task23">Task2.3</a></li>
+            <li><a href="#task24">Task2.4</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><meting-js url="/assets/music/ValderFields.mp3" name="ValderFields" artist="Tamas-Wells" cover="/assets/images/valder_cover.jpeg" theme="#448aff"></meting-js>
+<h2 id="week8-ecte955-homework">Week8 ECTE955 Homework</h2>
+<h3 id="preface">Preface</h3>
+<p>Lab7的作业是使用ZF迫零算法和MMSE最小均方误差算法来设计一个SSE符号间隔均衡器。具体的算法实现可以不用知道，主要根据2.38-2.44的公式来用matlab实现即可。Task2.1实现一个函数，有四个输入四个输出，在Task2.2到2.4中会对Task2.1的函数进行调用，研究p(均衡器的阶数)在1-12之间的变化，会如何影响码间干扰ISI。下面根据每个题进行分析。</p>
+<h3 id="exercise-2">Exercise 2</h3>
+<figure><a class="lightgallery" href="/assets/images/lab7_1.jpg" title="是图片别点啊" data-thumbnail="/assets/images/lab7_1.jpg" data-sub-html="<h2>Lab7 page 1</h2><p>是图片别点啊</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/assets/images/lab7_1.jpg"
+            data-srcset="/assets/images/lab7_1.jpg, /assets/images/lab7_1.jpg 1.5x, /assets/images/lab7_1.jpg 2x"
+            data-sizes="auto"
+            alt="/assets/images/lab7_1.jpg" />
+    </a><figcaption class="image-caption">Lab7 page 1</figcaption>
+    </figure>
+<figure><a class="lightgallery" href="/assets/images/lab7_2.jpg" title="是图片别点啊" data-thumbnail="/assets/images/lab7_2.jpg" data-sub-html="<h2>Lab7 page 2</h2><p>是图片别点啊</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/assets/images/lab7_2.jpg"
+            data-srcset="/assets/images/lab7_2.jpg, /assets/images/lab7_2.jpg 1.5x, /assets/images/lab7_2.jpg 2x"
+            data-sizes="auto"
+            alt="/assets/images/lab7_2.jpg" />
+    </a><figcaption class="image-caption">Lab7 page 2</figcaption>
+    </figure>
+<h4 id="task21">Task2.1</h4>
+<p>Write a general Matlab function for the symbol spaced equaliser (SSE) design according to the ZF and MMSE criteria.
+Your function should have four input parameters</p>
+<ul>
+<li>channel impulse response c (i.e., the normalised vector c(n)),</li>
+<li>equalizer order p,</li>
+<li>delay n0, and</li>
+<li>signal-to-noise ratio SN R (in dB).</li>
+</ul>
+<p>Your function should have five output arguments</p>
+<ul>
+<li>impulse response of the ZF equaliser hzf ,</li>
+<li>impulse response of the MMSE equaliser hmmse,</li>
+<li>overall impulse response of the ZF equaliser fzf (Hint: fzf = c * hzf ),</li>
+<li>overall impulse response of the MMSE equaliser fmmse (Hint: fmmse = c * hmmse ),and</li>
+<li>inter-symbol interference power affecting each signal sample in the ZF equaliser,which is denoted as ISIzf and is calculated as ISIzf = ∑n, n!=n0 |fzfn |^2.</li>
+</ul>
+<p>Hints:</p>
+<ul>
+<li>SN R (in dB) is given in this exercise. It is the SN R before equalisers (as defined in Eqs. (2.25)–(2.27)).</li>
+<li>You might need to convert the SN R value from a dB value to a decimal value when necessary inside your function.</li>
+</ul>
+<hr>
+<p>Answer:</p>
+<p>函数命名为:lab_sse.m，调用的时候使用此函数名</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-matlab" data-lang="matlab"><span class="k">function</span><span class="w"> </span>[h_zf, h_mmse, f_zf, f_mmse, ISI_zf]<span class="p">=</span><span class="w"> </span><span class="nf">lab_sse</span><span class="p">(</span>c, p, n0, SNR<span class="p">)</span><span class="w">
+</span><span class="w">    </span><span class="c">% 此函数接收4个输入，分别是信道冲激响应c，均衡器阶数p，延迟n0，信噪比SNR</span>
+    <span class="c">% 输出5个值，分别是h_zf, h_mmse, f_zf, f_mmse, ISI_zf，题目中写的很详细</span>
+    <span class="c">% 前四行代码去看Lab6的ppt，我会在下面贴出比较重要的一页</span>
+    <span class="n">m_channel_order</span> <span class="p">=</span> <span class="nb">length</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+    <span class="n">f</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">m_channel_order</span> <span class="o">+</span> <span class="n">p</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">f</span><span class="p">(</span><span class="n">n0</span><span class="p">)</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">C</span> <span class="p">=</span> <span class="n">convmtx</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="o">&#39;</span><span class="p">,</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="c">% h_zf公式</span>
+    <span class="n">h_zf</span> <span class="p">=</span> <span class="n">pinv</span><span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">;</span>
+    <span class="c">% 单位矩阵</span>
+    <span class="n">identity_matrix</span> <span class="p">=</span> <span class="nb">eye</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="c">%h_mmse公式</span>
+    <span class="n">h_mmse</span> <span class="p">=</span> <span class="p">(</span><span class="n">C</span><span class="o">&#39;</span> <span class="o">*</span> <span class="n">C</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">SNR</span> <span class="o">*</span> <span class="n">identity_matrix</span><span class="p">)</span> ^ <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">C</span><span class="o">&#39;</span> <span class="o">*</span> <span class="n">f</span><span class="p">;</span>
+    <span class="c">%f_zf和f_mmse公式</span>
+    <span class="n">f_zf</span> <span class="p">=</span> <span class="n">conv</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">h_zf</span><span class="p">);</span>
+    <span class="n">f_mmse</span> <span class="p">=</span> <span class="n">conv</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">h_mmse</span><span class="p">);</span>
+    <span class="c">%ISI_zf公式，n不等于n0时求和</span>
+    <span class="n">sum</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="n">index</span> <span class="p">=</span> <span class="mi">1</span> <span class="p">:</span> <span class="nb">length</span><span class="p">(</span><span class="n">f_zf</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">~=</span> <span class="n">n0</span>
+            <span class="n">sum</span> <span class="p">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">f_zf</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> ^ <span class="mi">2</span><span class="p">;</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="n">ISI_zf</span> <span class="p">=</span> <span class="n">sum</span><span class="p">;</span>
+<span class="k">end</span>
+</code></pre></td></tr></table>
+</div>
+</div><figure><a class="lightgallery" href="/assets/images/lab6_ppt.jpg" title="这一页之前的也要看，全部都要看" data-thumbnail="/assets/images/lab6_ppt.jpg" data-sub-html="<h2>Lab6的ppt</h2><p>这一页之前的也要看，全部都要看</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/assets/images/lab6_ppt.jpg"
+            data-srcset="/assets/images/lab6_ppt.jpg, /assets/images/lab6_ppt.jpg 1.5x, /assets/images/lab6_ppt.jpg 2x"
+            data-sizes="auto"
+            alt="/assets/images/lab6_ppt.jpg" />
+    </a><figcaption class="image-caption">Lab6的ppt</figcaption>
+    </figure>
+<h4 id="task22">Task2.2</h4>
+<p>Consider the normalised channel impulse response c which you have calcu-
+lated in Task 1.1, and given that the delay n0 = 4 and SNR = 15 dB. Show the Matlab commands that you would use to call the function created in Task 2.1 with these necessary input parameters. Then vary the equalisation order p, and pay attention to the output ISIzf value. What is the minimum equalisation order, denoted as pmin , when ISIzf starts being smaller than a desired value, say 0.01?</p>
+<p>本题的意思是根据Task2.1的函数，对输入的变量赋值，把Lab6中Task1.1给的信道冲激响应c作为输入，n0 = 4，SNR = 15，输入不同的p值，观察ISIzf值的变化，并给出当ISIzf的值开始小于0.01时p的值是多少。</p>
+<p>Answer:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-matlab" data-lang="matlab"><span class="c">% 前两行代码对Task1.1中求c，与lab6中代码思路一样，结构类似</span>
+<span class="n">c_bar</span> <span class="p">=</span> <span class="p">[</span><span class="mf">0.04</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.72</span><span class="p">,</span> <span class="mf">0.36</span><span class="p">,</span> <span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">];</span>
+<span class="n">c</span> <span class="p">=</span> <span class="n">downsample</span><span class="p">(</span><span class="n">c_bar</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">norm</span><span class="p">(</span><span class="n">downsample</span><span class="p">(</span><span class="n">c_bar</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+
+<span class="c">% 根据Task2.2题目中给的数据，给n0和SNR赋值</span>
+<span class="n">n0</span> <span class="p">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">SNR</span> <span class="p">=</span> <span class="mi">15</span><span class="p">;</span>
+<span class="c">% Task2.2题目中没有限制p的范围，根据Task2.4对p的描述，可知p设为1到12之间即可</span>
+<span class="c">% 当p在1到12之间时，调用函数，判断ISIzf小于0.01的时候，p的值为多少</span>
+<span class="k">for</span> <span class="n">p</span> <span class="p">=</span> <span class="mi">1</span> <span class="p">:</span><span class="mi">12</span>
+    <span class="p">[</span><span class="n">h_zf</span><span class="p">,</span> <span class="n">h_mmse</span><span class="p">,</span> <span class="n">f_zf</span><span class="p">,</span> <span class="n">f_mmse</span><span class="p">,</span> <span class="n">ISI_zf</span><span class="p">]=</span> <span class="n">lab_sse</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">n0</span><span class="p">,</span> <span class="n">SNR</span><span class="p">);</span>
+    <span class="k">if</span> <span class="n">ISI_zf</span> <span class="o">&lt;</span> <span class="mf">0.01</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;当p在1到12之间，且ISI_zf小于的值小于0.01的时候，p的值为:\n&#39;</span><span class="p">);</span>
+        <span class="nb">disp</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+        <span class="k">break</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;h_zf为:\n&#39;</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">h_zf</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;h_mmse为:\n&#39;</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">h_mmse</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;f_zf为:\n&#39;</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">f_zf</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;f_mmse为:\n&#39;</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">f_mmse</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;ISI_zf为:\n&#39;</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">ISI_zf</span><span class="p">);</span>
+<span class="c">% 最后p的值应该为7</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="task23">Task2.3</h4>
+<p>Record the overall impulse responses fzf and fmmse for the case p = pmin, which you have just found. What is the position of the largest impulse in each impulse response? Compare these positions with n0. Explain why the values of the largest impulse in fzf and fmmse are smaller than one while some other impulses are non-zero. What are the consequences of this fact?
+打印出p=7的时候fzf和fmmse的值。并求出每个冲激响应中最大值的位置是什么？将这些位置与n0比较。解释为什么fzf和fmmse中的最大值小于1，而其他一些脉冲不为0。这个事实的后果是什么</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-matlab" data-lang="matlab"><span class="c">% 前两行代码对Task1.1中求c，与lab6中代码思路一样，结构类似</span>
+<span class="n">c_bar</span> <span class="p">=</span> <span class="p">[</span><span class="mf">0.04</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.72</span><span class="p">,</span> <span class="mf">0.36</span><span class="p">,</span> <span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">];</span>
+<span class="n">c</span> <span class="p">=</span> <span class="n">downsample</span><span class="p">(</span><span class="n">c_bar</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">norm</span><span class="p">(</span><span class="n">downsample</span><span class="p">(</span><span class="n">c_bar</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+<span class="c">% 根据题目要求p,n0,SNR分别赋值后调用Task2.1函数，然后打印出fzf和fmmse的值</span>
+<span class="n">p</span> <span class="p">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="n">n0</span> <span class="p">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">SNR</span> <span class="p">=</span> <span class="mi">15</span><span class="p">;</span>
+<span class="p">[</span><span class="n">h_zf</span><span class="p">,</span> <span class="n">h_mmse</span><span class="p">,</span> <span class="n">f_zf</span><span class="p">,</span> <span class="n">f_mmse</span><span class="p">,</span> <span class="n">ISI_zf</span><span class="p">]=</span> <span class="n">lab_sse</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">n0</span><span class="p">,</span> <span class="n">SNR</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;f_zf为:\n&#39;</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">f_zf</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;f_mmse为:\n&#39;</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">f_mmse</span><span class="p">);</span>
+
+<span class="c">% 计算冲激响应的最大值和位置，这里ppt中的图很清楚，我会贴在下面，一定要认真看</span>
+<span class="c">% 初始化存储位置的变量f_zf_local和f_mmse_local,假设fzf和fmmse中的最大值都是第一个，做循环比较，如果第二个值比假设的“最大值”还要大，则两者交换，与此同时，把每个的索引值都保存(把每次的索引都赋值给存储位置的变量，即f_zf_local和f_mmse_local)下来，直到判断出最大值正好也保存了其位置。</span>
+<span class="c">% 这个思路学c语言啥的基础肯定都学过，有点啰嗦了</span>
+<span class="c">% 初始化fzf的位置变量</span>
+<span class="n">f_zf_local</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="c">% 初始化fmmse的位置变量</span>
+<span class="n">f_mmse_local</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="c">% 假设fzf的最大值为第一个值</span>
+<span class="n">h_zf_max</span> <span class="p">=</span> <span class="n">f_zf</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="c">% 假设fmmse的最大值为第一个值</span>
+<span class="n">f_mmse_max</span> <span class="p">=</span> <span class="n">f_mmse</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="c">% 对fzf循环判断</span>
+<span class="k">for</span> <span class="n">index</span> <span class="p">=</span> <span class="mi">1</span> <span class="p">:</span> <span class="nb">length</span><span class="p">(</span><span class="n">f_zf</span><span class="p">)</span>
+    <span class="c">% 若fzf中的值大于“最大值”，则把其赋给“最大值”</span>
+    <span class="k">if</span> <span class="n">f_zf</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">h_zf_max</span>
+        <span class="n">h_zf_max</span> <span class="p">=</span> <span class="n">f_zf</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+        <span class="c">% 记录下标</span>
+        <span class="n">f_zf_local</span> <span class="p">=</span> <span class="n">index</span><span class="p">;</span>
+    <span class="k">end</span>
+    <span class="c">% 得出fzf最大值和其下标</span>
+    <span class="n">f_zf_finalMax</span> <span class="p">=</span> <span class="p">[</span><span class="n">h_zf_max</span> <span class="p">,</span><span class="n">f_zf_local</span><span class="p">];</span>
+<span class="k">end</span>
+<span class="c">% 对fmmse进行判断，与fzf方法一致</span>
+<span class="k">for</span> <span class="nb">i</span> <span class="p">=</span> <span class="mi">1</span> <span class="p">:</span> <span class="nb">length</span><span class="p">(</span><span class="n">f_mmse</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">f_mmse</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">f_mmse_max</span>
+        <span class="n">f_mmse_max</span> <span class="p">=</span> <span class="n">f_mmse</span><span class="p">(</span><span class="nb">i</span><span class="p">);</span>
+        <span class="n">f_mmse_local</span> <span class="p">=</span> <span class="nb">i</span><span class="p">;</span>
+    <span class="k">end</span>
+    <span class="n">f_mmse_finalMax</span> <span class="p">=</span> <span class="p">[</span><span class="n">f_mmse_max</span> <span class="p">,</span><span class="n">f_mmse_local</span><span class="p">];</span>
+<span class="k">end</span>
+<span class="c">% 打印出fzf和fmmse的最大值及其下标</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;f_zf_max为:\n&#39;</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">f_zf_finalMax</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;f_mmse_max为:\n&#39;</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">f_mmse_finalMax</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>octave跑出的结果是:</p>
+<figure><a class="lightgallery" href="/assets/images/lab7_task2.3.jpg" title="c-u 3 (一定要自己做，不要抄袭，自己认真做)" data-thumbnail="/assets/images/lab7_task2.3.jpg" data-sub-html="<h2>Lab7_task2.3_octave结果</h2><p>c-u 3 (一定要自己做，不要抄袭，自己认真做)</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/assets/images/lab7_task2.3.jpg"
+            data-srcset="/assets/images/lab7_task2.3.jpg, /assets/images/lab7_task2.3.jpg 1.5x, /assets/images/lab7_task2.3.jpg 2x"
+            data-sizes="auto"
+            alt="/assets/images/lab7_task2.3.jpg" />
+    </a><figcaption class="image-caption">Lab7_task2.3_octave结果</figcaption>
+    </figure>
+<p>PPT:</p>
+<figure><a class="lightgallery" href="/assets/images/lab7_3.jpg" title="一定要认真听讲，认真看PPT" data-thumbnail="/assets/images/lab7_3.jpg" data-sub-html="<h2>Week8_Lab7_PPT</h2><p>一定要认真听讲，认真看PPT</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/assets/images/lab7_3.jpg"
+            data-srcset="/assets/images/lab7_3.jpg, /assets/images/lab7_3.jpg 1.5x, /assets/images/lab7_3.jpg 2x"
+            data-sizes="auto"
+            alt="/assets/images/lab7_3.jpg" />
+    </a><figcaption class="image-caption">Week8_Lab7_PPT</figcaption>
+    </figure>
+<p>可以看出最大值的位置与延迟n0的值相同。解释为什么fzf和fmmse中的最大值小于1，从PPT这页图中可以很清晰的看出，f=c*h，而其他一些脉冲不为0。这个事实的后果是什么？这里我还没想明白，等我想明白了再来更新。哭了真对不起</p>
+<h4 id="task24">Task2.4</h4>
+<p>How does ISIzf change if you keep increasing the equaliser order p from pmin to, for instance, p = 12? Comment on the tradeoff (i.e., the compromise) between this ISIzf change and the equaliser’s complexity.</p>
+<p>如果将均衡器阶数p从7不断提高到12，ISIzf会如何变化？对此ISIzf变化与均衡器复杂度之间的权衡进行评价。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-matlab" data-lang="matlab"><span class="c">% 得到c</span>
+<span class="n">c_bar</span> <span class="p">=</span> <span class="p">[</span><span class="mf">0.04</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.72</span><span class="p">,</span> <span class="mf">0.36</span><span class="p">,</span> <span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">];</span>
+<span class="n">c</span> <span class="p">=</span> <span class="n">downsample</span><span class="p">(</span><span class="n">c_bar</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">norm</span><span class="p">(</span><span class="n">downsample</span><span class="p">(</span><span class="n">c_bar</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+<span class="c">% 输入给定值</span>
+<span class="n">n0</span> <span class="p">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">SNR</span> <span class="p">=</span> <span class="mi">15</span><span class="p">;</span>
+<span class="c">% p从7到12</span>
+<span class="k">for</span> <span class="n">p</span> <span class="p">=</span> <span class="mi">7</span> <span class="p">:</span> <span class="mi">12</span>
+    <span class="p">[</span><span class="n">h_zf</span><span class="p">,</span> <span class="n">h_mmse</span><span class="p">,</span> <span class="n">f_zf</span><span class="p">,</span> <span class="n">f_mmse</span><span class="p">,</span> <span class="n">ISI_zf</span><span class="p">]=</span> <span class="n">lab_sse</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">n0</span><span class="p">,</span> <span class="n">SNR</span><span class="p">);</span>
+    <span class="n">fprintf</span> <span class="p">(</span><span class="s">&#39;ISI_zf&#39;</span><span class="p">);</span>
+    <span class="nb">disp</span> <span class="p">(</span><span class="n">ISI_zf</span><span class="p">);</span>
+<span class="k">end</span>
+</code></pre></td></tr></table>
+</div>
+</div><figure><a class="lightgallery" href="/assets/images/lab7_task2.4.jpg" title="越来越小" data-thumbnail="/assets/images/lab7_task2.4.jpg" data-sub-html="<h2>lab7_task2.4_octave结果</h2><p>越来越小</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/assets/images/lab7_task2.4.jpg"
+            data-srcset="/assets/images/lab7_task2.4.jpg, /assets/images/lab7_task2.4.jpg 1.5x, /assets/images/lab7_task2.4.jpg 2x"
+            data-sizes="auto"
+            alt="/assets/images/lab7_task2.4.jpg" />
+    </a><figcaption class="image-caption">lab7_task2.4_octave结果</figcaption>
+    </figure>
+<p>根据结果可以看出随着p从7增加到12，ISIzf的值变得越来越小，这里老师要求用图画出来，说比较清晰直观。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-11-15</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nswy123.github.io/matlab_lab7/" data-title="Matlab lab7" data-hashtags="Matlab,Notes"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nswy123.github.io/matlab_lab7/" data-title="Matlab lab7"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/matlab/">Matlab</a>,&nbsp;<a href="/tags/notes/">Notes</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/matlab_lab6/" class="prev" rel="prev" title="Matlab Lab6"><i class="fas fa-angle-left fa-fw"></i>Matlab Lab6</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://nswy123.github.io/" target="_blank">nswy123</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"><link rel="stylesheet" href="/lib/aplayer/dark.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":20},"comment":{"valine":{"appId":"hSzpoeCkSl84iDWzbj2QvB57-gzGzoHsz","appKey":"sO8QRmzW5Y9bvn11MdNQe6s4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"serverURLs":"https://hszpoeck.lc-cn-n1-shared.com","visitor":true}},"data":{"id-1":"nswy123","id-2":"nswy123"},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-172653330-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-172653330-1" async></script></body>
+</html>
