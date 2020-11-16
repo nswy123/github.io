@@ -38,7 +38,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/nswy123.github.io\/matlab_lab6\/"
-        },"image": ["https:\/\/nswy123.github.io\/assets\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Matlab, Notes","wordcount":  2316 ,
+        },"image": ["https:\/\/nswy123.github.io\/assets\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Matlab, Notes","wordcount":  4292 ,
         "url": "https:\/\/nswy123.github.io\/matlab_lab6\/","datePublished": "2020-11-12T21:09:47+08:00","dateModified": "2020-11-12T21:09:47+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "nswy123","logo": "https:\/\/nswy123.github.io\/assets\/images\/head.jpg"},"author": {
@@ -115,8 +115,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Matlab Lab6</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://nswy123.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>nswy123</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/ecte955/"><i class="far fa-folder fa-fw"></i>ECTE955</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-12">2020-11-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2316 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/matlab_lab6/" class="leancloud_visitors" data-flag-title="Matlab Lab6">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-12">2020-11-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4292 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;<span id="/matlab_lab6/" class="leancloud_visitors" data-flag-title="Matlab Lab6">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -136,7 +136,15 @@
                 <li><a href="#一个简单的介绍">一个简单的介绍</a></li>
               </ul>
             </li>
-            <li><a href="#exercise-1">Exercise 1</a></li>
+            <li><a href="#exercise-1">Exercise 1</a>
+              <ul>
+                <li><a href="#task-11">Task 1.1</a></li>
+                <li><a href="#task-12">Task 1.2</a></li>
+                <li><a href="#task-13">Task 1.3</a></li>
+                <li><a href="#task-14">Task 1.4</a></li>
+              </ul>
+            </li>
+            <li><a href="#合并代码">合并代码</a></li>
           </ul>
         </li>
       </ul>
@@ -147,8 +155,8 @@
 <h2 id="week8-ecte955-homework">Week8 ECTE955 Homework</h2>
 <h3 id="preface">Preface</h3>
 <p>现在是2020年11月12日周四晚21点20分</p>
-<p>关于李忠年老师的Matlab作业，我希望分享一下自己学习这门课的感受。我想说每个人的精力是有限的，之前用org-mode制定了一个学习规划，在课前的两天我把大部分的时间用在了Golang的学习上面，anki每天也都花费了半个小时背单词，以至于我完全没有关注到Matlab这次作业的难度和重要性，忽略了当前的重点是先完成作业，自己的时间分配有了很大的问题，这又是一个教训吧。今天晚上18点30分老师检查lab6和lab7的prelab和代码，做的很不好，现在来回顾并总结一下。</p>
-<p>今天晚上先写Lab6的总结，明天再补充Lab7的总结。</p>
+<p>关于李忠年老师的Matlab作业，我希望分享一下自己学习这门课的感受。我想说每个人的精力是有限的，之前制定了一个学习规划，在课前的两天我把大部分的时间用在了Golang的学习上面，anki每天也都花费了半个小时背单词，以至于我完全没有关注到Matlab这次作业的难度和重要性，忽略了当前的重点是先完成作业，自己的时间分配有了很大的问题，这又是一个教训吧。今天晚上18点30分老师检查lab6和lab7的prelab和代码，做的很不好，现在来回顾并总结一下。</p>
+<p>今天晚上先写Lab6的总结，改天再补充Lab7的总结。</p>
 <p><font color=#ff0000>每道题每行代码都要亲力亲为，不要去想着试图抄袭别人的成果，就算自己做不出来也要想办法做，哪怕去问别人搞清楚原理再自己一步步做。我仅以此文纪念自己的教训，希望后来者不要犯同样的错误。</font></p>
 <h3 id="lab-6">Lab 6</h3>
 <h5 id="一个简单的介绍">一个简单的介绍</h5>
@@ -176,6 +184,389 @@
             alt="/assets/images/lab6_2.jpg" />
     </a><figcaption class="image-caption">Lab6 page 2</figcaption>
     </figure>
+<h5 id="task-11">Task 1.1</h5>
+<p>From the channel impulse response c̄ of the FSE system in Fig.2.7(b), calculate the channel impulse response c of the corresponding SSE system in Fig.2.7(a).
+Hints:</p>
+<ul>
+<li>form a new vector, say d, by taking every odd elements of c̄, i.e., dn = c̄(2n−1) for n = 1, 2, 3, . . . (you can use either the downsample command or the Matlab indexing method to do this task. Refer to the Matlab Help menu for its definition and syntax).
+Then</li>
+<li>normalise d to a unit power to get the channel impulse response c (i.e., we must ∑2have n |cn| = 1). (the Matlab command norm might be useful in this task. Refer to the Matlab Help menu for its definition and syntax).</li>
+</ul>
+<p>Answer:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-matlab" data-lang="matlab"><span class="c">% 根据fse中的c_bar求sse中信道的脉冲响应c，fse系统中的c_bar是已知的，如下</span>
+<span class="n">c_bar</span> <span class="p">=</span> <span class="p">[</span><span class="mf">0.04</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.72</span><span class="p">,</span> <span class="mf">0.36</span><span class="p">,</span> <span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">];</span>
+<span class="c">% 采样的频率，均衡器的设计中采样频率就按题目中给出的，仅就本课而言M=2是确定的值，就算不分配变量M，在上下采样函数调用的时候直接输入2也可以</span>
+<span class="n">M</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="c">% 输入的序列x</span>
+<span class="n">x</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+<span class="c">% 均衡器的脉冲响应h，按题目要求设为1</span>
+<span class="n">h</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="c">% 噪声w不考虑，设为0</span>
+<span class="n">w</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="c">%Task1</span>
+<span class="c">% 认真看sse和fse的图</span>
+<span class="c">% fse中的下采样，downsample函数采取c_bar中奇数位置的值</span>
+<span class="n">d</span> <span class="p">=</span> <span class="n">downsample</span><span class="p">(</span><span class="n">c_bar</span><span class="p">,</span> <span class="n">M</span><span class="p">);</span>
+<span class="c">% 为了好计算，进行归一化操作</span>
+<span class="c">% doc norm查看norm函数的用法，其实是进行了一个向量的计算，也叫欧几里得长度或者2-范数</span>
+<span class="n">d_norm</span> <span class="p">=</span> <span class="n">norm</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
+<span class="c">% 用对c_bar下采样后得到的值d，去除以这个归一化后的向量(可以看成距离)，就是c的值</span>
+<span class="n">c</span> <span class="p">=</span> <span class="n">d</span> <span class="o">/</span> <span class="n">d_norm</span><span class="p">;</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;c为:\n&#39;</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="task-12">Task 1.2</h5>
+<p>From the input signal x, find the signal, called x̄, at the output of the upsampling block in Fig.2.7(b). (Hint: Use upsample command in Matlab).</p>
+<p>Answer:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-matlab" data-lang="matlab"><span class="c">% 根据fse的图可以知道x_bar通过对x进行上采样得到</span>
+<span class="n">x_bar</span> <span class="p">=</span> <span class="n">upsample</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">M</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;x_bar为:\n&#39;</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">x_bar</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="task-13">Task 1.3</h5>
+<p>Calculate y(n) and z(n) in both systems (a) and (b) in Fig. 2.7, and then use the stem command to plot x(n), y(n) and z(n) for both systems. For the ease of comparison, it is recommended that all three signals x, y and z should be plotted in one figure for each system.
+Hints:</p>
+<ul>
+<li>You can use the command subplot for plotting multiple sub-figures in one figure.</li>
+<li>The commands upsample and downsample might be needed for the upsamling and downsampling processes in Fig.2.7(b).</li>
+<li>The equaliser impulse response h̄(n) in Fig. 2.7(b) can be found by upsampling h(n) in Fig. 2.7(a) with the upsampling factor M = 2.</li>
+<li>A linear convolution can be calculated by the command conv in Matlab.</li>
+</ul>
+<p>Answer:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-matlab" data-lang="matlab"><span class="c">%Task3</span>
+<span class="c">% y_sse为x和c的卷积</span>
+<span class="n">y_sse</span> <span class="p">=</span> <span class="n">conv</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+<span class="c">% z_sse为y_sse和h的卷积</span>
+<span class="n">z_sse</span> <span class="p">=</span> <span class="n">conv</span><span class="p">(</span><span class="n">y_sse</span><span class="p">,</span> <span class="n">h</span><span class="p">);</span>
+<span class="c">% 计算fse中的z(n)</span>
+<span class="c">% 与sse类似</span>
+<span class="n">y_fse</span> <span class="p">=</span> <span class="n">conv</span><span class="p">(</span><span class="n">x_bar</span><span class="p">,</span> <span class="n">c_bar</span><span class="p">);</span>
+<span class="n">h_fse</span> <span class="p">=</span> <span class="n">upsample</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">M</span><span class="p">);</span>
+<span class="n">v_fse</span> <span class="p">=</span> <span class="n">conv</span><span class="p">(</span><span class="n">y_fse</span><span class="p">,</span> <span class="n">h_fse</span><span class="p">);</span>
+<span class="n">z_fse</span> <span class="p">=</span> <span class="n">downsample</span><span class="p">(</span><span class="n">v_fse</span><span class="p">,</span> <span class="n">M</span><span class="p">);</span>
+
+<span class="c">% figure(1)为Task3中的图，根据上述计算，包括sse和fse的x、y和z的图像</span>
+<span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="c">% 一行四列第一个图</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">);</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;SSE&#39;</span><span class="p">);</span>
+<span class="c">% x默认线型无标记符</span>
+<span class="n">stem</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">hold</span> <span class="n">on</span>
+<span class="c">% 注意，这里一定要用不同的形式表现图像，只用颜色是不可以的，因为重合会有图像被遮挡住。</span>
+<span class="c">% y_sse使用双划线红色线型，星号标记符</span>
+<span class="n">stem</span><span class="p">(</span><span class="n">y_sse</span><span class="p">,</span> <span class="s">&#39;--*r&#39;</span><span class="p">);</span>
+<span class="n">hold</span> <span class="n">on</span>
+<span class="c">% z_sse使用虚线黄色线型，加号标记符</span>
+<span class="n">stem</span><span class="p">(</span><span class="n">z_sse</span><span class="p">,</span> <span class="s">&#39;:+y&#39;</span><span class="p">);</span>
+<span class="c">% 图例</span>
+<span class="n">legend</span><span class="p">(</span><span class="s">&#39;x(n)&#39;</span><span class="p">,</span><span class="s">&#39;y(n)&#39;</span><span class="p">,</span><span class="s">&#39;z(n)&#39;</span><span class="p">);</span>
+<span class="c">% 加网格</span>
+<span class="n">grid</span> <span class="n">on</span>
+
+<span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="c">% 一行四列第三个图</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">);</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;SSE&#39;</span><span class="p">);</span>
+<span class="n">hold</span> <span class="n">on</span>
+<span class="c">% z_sse使用双划线蓝色线型，星号标记符</span>
+<span class="n">stem</span><span class="p">(</span><span class="n">z_sse</span><span class="p">,</span> <span class="s">&#39;--*b&#39;</span><span class="p">);</span>
+<span class="c">% 图例</span>
+<span class="n">legend</span><span class="p">(</span><span class="s">&#39;z(n)&#39;</span><span class="p">);</span>
+<span class="c">% 网格</span>
+<span class="n">grid</span> <span class="n">on</span>
+
+<span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="c">% 一行四列第二个图</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">);</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;FSE&#39;</span><span class="p">);</span>
+<span class="c">% x默认线型无标记符</span>
+<span class="n">stem</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">hold</span> <span class="n">on</span>
+<span class="c">% y_fse使用双划线红色线型，星号标记符</span>
+<span class="n">stem</span><span class="p">(</span><span class="n">y_fse</span><span class="p">,</span> <span class="s">&#39;--*r&#39;</span><span class="p">);</span>
+<span class="n">hold</span> <span class="n">on</span>
+<span class="c">% z_fse使用虚线黄色线型，加号标记符</span>
+<span class="n">stem</span><span class="p">(</span><span class="n">z_fse</span><span class="p">,</span> <span class="s">&#39;:+y&#39;</span><span class="p">);</span>
+<span class="c">% 图例</span>
+<span class="n">legend</span><span class="p">(</span><span class="s">&#39;x(n)&#39;</span><span class="p">,</span> <span class="s">&#39;y(n)&#39;</span><span class="p">,</span> <span class="s">&#39;z(n)&#39;</span><span class="p">);</span>
+<span class="c">% 网格</span>
+<span class="n">grid</span> <span class="n">on</span>
+
+<span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="c">% 第四个图</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">);</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;FSE&#39;</span><span class="p">);</span>
+<span class="n">hold</span> <span class="n">on</span>
+<span class="c">% z_fse使用虚线蓝色线型，加号标记符</span>
+<span class="n">stem</span><span class="p">(</span><span class="n">z_fse</span><span class="p">,</span> <span class="s">&#39;:+b&#39;</span><span class="p">);</span>
+<span class="c">% 图例</span>
+<span class="n">legend</span><span class="p">(</span><span class="s">&#39;z(n)&#39;</span><span class="p">);</span>
+<span class="c">% 网格</span>
+<span class="n">grid</span> <span class="n">on</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="task-14">Task 1.4</h5>
+<p>Compare the input signal x(n) and the output signal z(n) in each system. From the output signal z(n), is it possible to recover the input sequence x(n) or not? If not, explain why and state what need to be done to the equaliser so that the input sequence can possibly be recovered? Hints: Find out whether there is any window of consecutive samples in the output signal z(n) that have polarities being similar to those of the input signal x(n) or not.</p>
+<p>Answer:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-matlab" data-lang="matlab"><span class="c">%Task4</span>
+<span class="c">% 第四问的意思是比较fse和sse的输入信号x和输出信号z。根据输出信号z是否可以恢复输入x？</span>
+<span class="c">% 根据提示找到输出信号z中极性与输入信号x相似的连续样本。</span>
+<span class="c">% 首先打印一下x，然后打印z_sse和z_fse，看三者中的极性(就是正负号)相同的部分。</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;x为:\n&#39;</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;z_sse为:\n&#39;</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">z_sse</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="s">&#39;z_fse为:\n&#39;</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">z_fse</span><span class="p">);</span>
+<span class="c">% 输出应该是:</span>
+<span class="c">% 注意，此代码我是在manjaro下使用的octave运行的，可能结果形式和matlab稍有区别</span>
+<span class="c">% x = [1 1 -1 1 -1 1 1 -1 1 1 -1 -1];</span>
+
+<span class="c">% z_sse = [6.4299e-02 1.7682e-01 8.5196e-01 1.3342e+00 -1.2860e-01   2.2505e-01 -9.6449e-02 3.2150e-01 1.2860e+00 -1.2490e-16 3.2150e-01 1.1574e+00 -2.8935e-01 -1.3342e+00 -6.2692e-01 -4.8224e-02];</span>
+
+<span class="c">% z_fse = [0.04000 0.11000 0.53000 0.83000 -0.08000 0.14000 -0.06000 0.20000 0.80000 -0.00000 0.20000 0.72000 -0.18000 -0.83000 -0.39000 -0.03000 0.00000];</span>
+<span class="c">% 可以看到从第三个数开始极性相同，为了恢复原始信号，只需要从第三个数开始操作，前两个数舍去就可以了，</span>
+<span class="c">% 操作使用到了sign函数，sign函数的意思是比较向量中的值与零的大小，若大于0则输出1，若小于零则输出-1，这样对z_sse和z_fse使用sign函数就把x恢复了出来</span>
+<span class="c">% 代码如下:</span>
+
+<span class="n">len_x</span> <span class="p">=</span> <span class="nb">length</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">sign_a</span> <span class="p">=</span> <span class="nb">sign</span><span class="p">(</span><span class="n">z_sse</span><span class="p">(</span><span class="mi">3</span> <span class="p">:</span> <span class="n">len_x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">));</span>
+<span class="n">sign_b</span> <span class="p">=</span> <span class="nb">sign</span><span class="p">(</span><span class="n">z_fse</span><span class="p">(</span><span class="mi">3</span> <span class="p">:</span> <span class="n">len_x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">));</span>
+
+<span class="c">% 画图与Task3类似，应该是比较清楚的</span>
+<span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;SSE x(n)&#39;</span><span class="p">);</span>
+<span class="n">hold</span> <span class="n">on</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">);</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">);</span>
+<span class="n">stem</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">legend</span><span class="p">(</span> <span class="s">&#39;x(n)&#39;</span><span class="p">);</span>
+
+<span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;SSE z(n)&#39;</span><span class="p">);</span>
+<span class="n">hold</span> <span class="n">on</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">);</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">);</span>
+<span class="n">stem</span><span class="p">(</span><span class="n">sign_a</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">legend</span><span class="p">(</span><span class="s">&#39;z(n)&#39;</span><span class="p">);</span>
+
+<span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;FSE x(n)&#39;</span><span class="p">);</span>
+<span class="n">hold</span> <span class="n">on</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">);</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">);</span>
+<span class="n">stem</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">legend</span><span class="p">(</span><span class="s">&#39;x(n)&#39;</span><span class="p">);</span>
+
+<span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">title</span><span class="p">(</span><span class="s">&#39;FSE z(n)&#39;</span><span class="p">);</span>
+<span class="n">hold</span> <span class="n">on</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">);</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;y&#39;</span><span class="p">);</span>
+<span class="n">stem</span><span class="p">(</span><span class="n">sign_b</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">legend</span><span class="p">(</span><span class="s">&#39;z(n)&#39;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="合并代码">合并代码</h4>
+<p>最终的代码一个文件即可，下面贴出全部的代码:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">  1
