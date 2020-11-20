@@ -4,9 +4,16 @@
         <link>https://nswy123.github.io/</link>
         <description>靡不有初，鲜克有终</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>nswy123@126.com (nswy123)</managingEditor>
-            <webMaster>nswy123@126.com (nswy123)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 19 Nov 2020 22:48:58 &#43;0800</lastBuildDate>
+            <webMaster>nswy123@126.com (nswy123)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 20 Nov 2020 22:43:36 &#43;0800</lastBuildDate>
             <atom:link href="https://nswy123.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>2020年11月20日</title>
+    <link>https://nswy123.github.io/20201120/</link>
+    <pubDate>Fri, 20 Nov 2020 22:43:36 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/20201120/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>Matlab Lab8</title>
     <link>https://nswy123.github.io/matlab_lab8/</link>
     <pubDate>Thu, 19 Nov 2020 22:48:58 &#43;0800</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://nswy123.github.io/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_map/</guid>
     <description><![CDATA[Go语言基础_map]]></description>
-</item><item>
-    <title>Go语言基础_数组</title>
-    <link>https://nswy123.github.io/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E6%95%B0%E7%BB%84/</link>
-    <pubDate>Sun, 08 Nov 2020 19:09:13 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://nswy123.github.io/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E6%95%B0%E7%BB%84/</guid>
-    <description><![CDATA[Go语言基础_数组]]></description>
 </item></channel>
 </rss>
