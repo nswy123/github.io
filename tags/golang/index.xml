@@ -4,7 +4,14 @@
         <link>https://nswy123.github.io/tags/golang/</link>
         <description>Golang - 标签 - nswy123</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>nswy123@126.com (nswy123)</managingEditor>
-            <webMaster>nswy123@126.com (nswy123)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 09 Nov 2020 20:16:54 &#43;0800</lastBuildDate><atom:link href="https://nswy123.github.io/tags/golang/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>nswy123@126.com (nswy123)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 25 Nov 2020 14:01:14 &#43;0800</lastBuildDate><atom:link href="https://nswy123.github.io/tags/golang/" rel="self" type="application/rss+xml" /><item>
+    <title>快速开始一个Go程序</title>
+    <link>https://nswy123.github.io/goinaction_section2/</link>
+    <pubDate>Wed, 25 Nov 2020 14:01:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://nswy123.github.io/goinaction_section2/</guid>
+    <description><![CDATA[第二章 快速开始一个Go程序]]></description>
+</item><item>
     <title>关于Go语言的介绍</title>
     <link>https://nswy123.github.io/goinaction_section1/</link>
     <pubDate>Mon, 09 Nov 2020 20:16:54 &#43;0800</pubDate>

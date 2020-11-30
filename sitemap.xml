@@ -2,12 +2,15 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://nswy123.github.io/categories/</loc><lastmod>2020-11-30T19:50:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://nswy123.github.io/categories/goinaction/</loc><lastmod>2020-11-30T19:50:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://nswy123.github.io/tags/golang/</loc><lastmod>2020-11-30T19:50:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://nswy123.github.io/tags/notes/</loc><lastmod>2020-11-30T19:50:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://nswy123.github.io/</loc><lastmod>2020-11-30T19:50:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://nswy123.github.io/posts/</loc><lastmod>2020-11-30T19:50:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://nswy123.github.io/tags/</loc><lastmod>2020-11-30T19:50:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://nswy123.github.io/goinaction_section2/</loc><lastmod>2020-11-30T19:50:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://nswy123.github.io/20201120/</loc><lastmod>2020-11-20T22:43:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://nswy123.github.io/categories/</loc><lastmod>2020-11-24T15:42:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://nswy123.github.io/tags/notes/</loc><lastmod>2020-11-20T22:43:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://nswy123.github.io/</loc><lastmod>2020-11-24T15:42:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://nswy123.github.io/posts/</loc><lastmod>2020-11-24T15:42:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://nswy123.github.io/tags/</loc><lastmod>2020-11-24T15:42:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://nswy123.github.io/tags/%E6%9D%82%E8%AE%B0/</loc><lastmod>2020-11-20T22:43:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://nswy123.github.io/categories/%E9%9A%8F%E7%AC%94/</loc><lastmod>2020-11-20T22:43:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://nswy123.github.io/categories/ecte955/</loc><lastmod>2020-11-19T22:48:58&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
@@ -20,8 +23,6 @@
             <loc>https://nswy123.github.io/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E6%8C%87%E9%92%88/</loc><lastmod>2020-11-11T14:33:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://nswy123.github.io/20201110_notes/</loc><lastmod>2020-11-15T11:30:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://nswy123.github.io/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_function/</loc><lastmod>2020-11-09T22:06:46&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://nswy123.github.io/categories/goinaction/</loc><lastmod>2020-11-09T20:16:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://nswy123.github.io/tags/golang/</loc><lastmod>2020-11-09T20:16:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://nswy123.github.io/goinaction_section1/</loc><lastmod>2020-11-09T20:16:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://nswy123.github.io/20201109-%E6%9D%82%E8%AE%B0/</loc><lastmod>2020-11-15T11:42:33&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://nswy123.github.io/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_map/</loc><lastmod>2020-11-08T20:34:36&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
