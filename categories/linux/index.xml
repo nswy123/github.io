@@ -1,0 +1,52 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>Linux - 分类 - nswy123</title>
+        <link>https://nswy123.top/categories/linux/</link>
+        <description>Linux - 分类 - nswy123</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 05 Nov 2020 22:49:17 &#43;0800</lastBuildDate><atom:link href="https://nswy123.top/categories/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>shell-倒计时程序</title>
+    <link>https://nswy123.top/count_down/</link>
+    <pubDate>Thu, 05 Nov 2020 22:49:17 &#43;0800</pubDate><dc:creator>nswy123</dc:creator><guid>https://nswy123.top/count_down/</guid>
+    <description><![CDATA[shell-倒计时程序]]></description>
+</item><item>
+    <title>manjaro_kde关闭独立显卡</title>
+    <link>https://nswy123.top/manjaro_kde_turnoff_gpu/</link>
+    <pubDate>Sun, 04 Oct 2020 15:08:20 &#43;0800</pubDate><dc:creator>nswy123</dc:creator><guid>https://nswy123.top/manjaro_kde_turnoff_gpu/</guid>
+    <description><![CDATA[manjaro_kde关闭独立显卡]]></description>
+</item><item>
+    <title>安装fctix5框架和rime输入法</title>
+    <link>https://nswy123.top/fcitx5/</link>
+    <pubDate>Sat, 05 Sep 2020 22:27:20 &#43;0800</pubDate><dc:creator>nswy123</dc:creator><guid>https://nswy123.top/fcitx5/</guid>
+    <description><![CDATA[安装fctix5框架和rime输入法]]></description>
+</item><item>
+    <title>ffmpeg处理音频和视频</title>
+    <link>https://nswy123.top/ffmpeg/</link>
+    <pubDate>Sat, 05 Sep 2020 21:27:20 &#43;0800</pubDate><dc:creator>nswy123</dc:creator><guid>https://nswy123.top/ffmpeg/</guid>
+    <description><![CDATA[ffmpeg处理音频和视频]]></description>
+</item><item>
+    <title>manjaro清理磁盘和换源</title>
+    <link>https://nswy123.top/manjaro%E6%B8%85%E7%90%86/</link>
+    <pubDate>Mon, 03 Aug 2020 21:27:40 &#43;0800</pubDate><dc:creator>nswy123</dc:creator><guid>https://nswy123.top/manjaro%E6%B8%85%E7%90%86/</guid>
+    <description><![CDATA[manjaro清理磁盘和换源]]></description>
+</item><item>
+    <title>linux下的一些Tips</title>
+    <link>https://nswy123.top/problems-set/</link>
+    <pubDate>Sun, 02 Aug 2020 21:27:40 &#43;0800</pubDate><dc:creator>nswy123</dc:creator><guid>https://nswy123.top/problems-set/</guid>
+    <description><![CDATA[linux下的一些Tips]]></description>
+</item><item>
+    <title>Manjaro显卡驱动问题开机黑屏，配置源，机场etc</title>
+    <link>https://nswy123.top/manjaro-stuck/</link>
+    <pubDate>Mon, 23 Mar 2020 17:13:20 &#43;0800</pubDate><dc:creator>nswy123</dc:creator><guid>https://nswy123.top/manjaro-stuck/</guid>
+    <description><![CDATA[Manjaro显卡驱动问题开机黑屏，配置源，机场etc]]></description>
+</item><item>
+    <title>KDE开机baloo_file_extractor占用cpu过高导致卡顿问题</title>
+    <link>https://nswy123.top/baloo_file/</link>
+    <pubDate>Sun, 08 Mar 2020 10:45:30 &#43;0800</pubDate><dc:creator>nswy123</dc:creator><guid>https://nswy123.top/baloo_file/</guid>
+    <description><![CDATA[KDE开机baloo_file_extractor占用cpu过高导致卡顿问题]]></description>
+</item><item>
+    <title>latte-dock 更新到0.9.9 右击dock栏无法打开设置</title>
+    <link>https://nswy123.top/latte-dock/</link>
+    <pubDate>Tue, 03 Mar 2020 17:13:20 &#43;0800</pubDate><dc:creator>nswy123</dc:creator><guid>https://nswy123.top/latte-dock/</guid>
+    <description><![CDATA[latte-dock 更新到0.9.9 右击dock栏无法打开设置]]></description>
+</item></channel>
+</rss>

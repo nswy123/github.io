@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Go语言实战第二章_快速开始一个Go程序 - nswy123</title><meta name="description" content="第二章 快速开始一个Go程序"><meta property="og:title" content="Go语言实战第二章_快速开始一个Go程序" />
+<meta property="og:description" content="第二章 快速开始一个Go程序" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nswy123.top/goinaction_section2/" /><meta property="og:image" content="https://nswy123.top/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-25T14:01:14+08:00" />
+<meta property="article:modified_time" content="2020-11-30T19:50:14+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://nswy123.top/"/>
+
+<meta name="twitter:title" content="Go语言实战第二章_快速开始一个Go程序"/>
+<meta name="twitter:description" content="第二章 快速开始一个Go程序"/>
+<meta name="application-name" content="nswy123">
+<meta name="apple-mobile-web-app-title" content="nswy123"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://nswy123.top/goinaction_section2/" /><link rel="prev" href="https://nswy123.top/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E6%8C%87%E9%92%88/" /><link rel="next" href="https://nswy123.top/leetcode_twosum/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="q5BcEw2yTxdK8dJmgEJzJ8-vts8kA165bdHVuqhs5qM" /><meta name="msvalidate.01" content="B0B44AE9BE225A80728C76B48480B504" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Go语言实战第二章_快速开始一个Go程序",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/nswy123.top\/goinaction_section2\/"
+        },"image": ["https:\/\/nswy123.top\/assets\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Notes, Golang","wordcount":  5741 ,
+        "url": "https:\/\/nswy123.top\/goinaction_section2\/","datePublished": "2020-11-25T14:01:14+08:00","dateModified": "2020-11-30T19:50:14+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "nswy123","logo": "https:\/\/nswy123.top\/assets\/images\/head.jpg"},"author": {
+                "@type": "Person",
+                "name": "nswy123"
+            },"description": "第二章 快速开始一个Go程序"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="nswy123"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/friendlinks/"> 友链 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/nswy123" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="nswy123"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/friendlinks/" title="">友链</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/nswy123" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Go语言实战第二章_快速开始一个Go程序</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://nswy123.github.io" title="Author" target="_blank" rel="noopener noreferrer author" class="author"><i class="fas fa-user-circle fa-fw"></i>nswy123</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/goinaction/"><i class="far fa-folder fa-fw"></i>Goinaction</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-25">2020-11-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5741 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 12 分钟&nbsp;<span id="/goinaction_section2/" class="leancloud_visitors" data-flag-title="Go语言实战第二章_快速开始一个Go程序">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#21-程序架构">2.1 程序架构</a></li>
+    <li><a href="#22-main-package">2.2 main package</a></li>
+    <li><a href="#23-search-package">2.3 search package</a>
+      <ul>
+        <li><a href="#231-searchgo">2.3.1 search.go</a></li>
+        <li><a href="#232-feedgo">2.3.2 feed.go</a></li>
+        <li><a href="#233-matchgodefaultgo">2.3.3 match.go/default.go</a></li>
+      </ul>
+    </li>
+    <li><a href="#24-rss匹配器">2.4 RSS匹配器</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="21-程序架构">2.1 程序架构</h2>
+<figure><a class="lightgallery" href="/assets/images/tree_goinaction.jpg" title="结构图" data-thumbnail="/assets/images/tree_goinaction.jpg" data-sub-html="<h2>程序结构</h2><p>结构图</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/assets/images/tree_goinaction.jpg"
+            data-srcset="/assets/images/tree_goinaction.jpg, /assets/images/tree_goinaction.jpg 1.5x, /assets/images/tree_goinaction.jpg 2x"
+            data-sizes="auto"
+            alt="/assets/images/tree_goinaction.jpg" />
+    </a><figcaption class="image-caption">程序结构</figcaption>
+    </figure>
+<h2 id="22-main-package">2.2 main package</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;log&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;os&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nx">_</span> <span class="s">&#34;github.com/goinaction/code/chapter2/sample/matchers&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;github.com/goinaction/code/chapter2/sample/search&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// Golang中不允许声明包后不使用，使用_下划线可以让编译器接受这种方式，并调用包内的init函数。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// init is called prior to main.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// init函数在main函数之前运行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// Change the device for logging to stdout.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 将默认的标准错误stderr设置为标准输出stdout
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">log</span><span class="p">.</span><span class="nf">SetOutput</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Stdout</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// main is the entry point for the program.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// Perform the search for the specified term.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">search</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="s">&#34;president&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="23-search-package">2.3 search package</h2>
+<h3 id="231-searchgo">2.3.1 search.go</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">//Preface
+</span></span></span><span class="line"><span class="cl"><span class="c1">//匹配器是包含特定信息，用于处理某类数据源的实例。
+</span></span></span><span class="line"><span class="cl"><span class="c1">//框架本身默认实现了一个匹配器
+</span></span></span><span class="line"><span class="cl"><span class="c1">//matchers包中实现了一个RSS匹配器，它知道如何获取读入并查找rss数据源
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kn">package</span> <span class="nx">search</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//search文件夹下的每个文件都会以search作为包名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//从标准库中导入代码时，只需要给出包名，编译器会到GOROOT和GOPATH下寻找包
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//log包提供打印日志到stdout、stderr或者自定义设备
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="s">&#34;log&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//sync包提供同步goroutine的功能
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="s">&#34;sync&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Knowledge:
+</span></span></span><span class="line"><span class="cl"><span class="c1">// map使用hash实现，键值对，引用类型初始化，
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 定义: map[KeyType]ValueType
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 1.KeyType:键类型
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 2.ValueType:值类型
+</span></span></span><span class="line"><span class="cl"><span class="c1">// map类型初始值为nil，使用make()函数分配内存:
+</span></span></span><span class="line"><span class="cl"><span class="c1">// make(map[KeyType]ValueType, [cap])
+</span></span></span><span class="line"><span class="cl"><span class="c1">// cap可选(最好写上)，表示map的容量.
+</span></span></span><span class="line"><span class="cl"><span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 注册用于搜索的匹配器映射
+</span></span></span><span class="line"><span class="cl"><span class="c1">// A map of registered matchers for searching.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">matchers</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="nx">Matcher</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 1. 键类型为string，它的值类型为Matcher，make()函数为其分配内存，它会返回两个类型，一个string类型，一个Matcher类型，Matcher类型定义在matcher.go中。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 2. 这个变量是一个包级变量，因为它没有定义在任何一个函数作用域内
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 3. Go中标识符要么从包里公开要么不公开，导入一个包后程序可以直接访问任何一个公开的标识符(以大写字母开头)，不公开的标识符(以小写字母开头)不能被直接访问，但是可以间接访问。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// knowledge
+</span></span></span><span class="line"><span class="cl"><span class="c1">// func声明函数，其后紧随函数名Run、参数searchTerm string、返回值
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 在main中调用:
+</span></span></span><span class="line"><span class="cl"><span class="c1">// search.Run(&#34;president&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Run performs the search logic.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">Run</span><span class="p">(</span><span class="nx">searchTerm</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 获取需要搜索的数据源列表
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 第一件事就是先从互联网上获取数据feeds列表
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// Retrieve the list of feeds to search through.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">feeds</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nf">RetrieveFeeds</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 1. 调用了search包中的RetrieveFeeds函数，返回两个值，
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 一个是一组Feed类型的切片(是一种实现了一个动态数组的引用类型，Go中使用切片操作一组数据，第4章进一步介绍切片)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// 2. 第二个返回值是一个错误值，if判断是否真的是一个错误，
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">// 若真的错，调用log中的Fatal函数，其接收这个值并输出错误后终止程序。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// summary：很多语言允许一个函数返回多个值，声明一个返回值和一个错误值，若错误则丢弃返回值，否则会产生更多的错误。译者：在Go标准库中的io.Reader.Read函数中允许返回数据和错误值。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// 创建一个无缓冲的通道，接收匹配后的结果
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// Create an unbuffered channel to receive match results to display.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">results</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="o">*</span><span class="nx">Result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 使用了简化声明变量的方式，若声明变量为零值则使用var关键字，
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 若非零值或使用函数返回值创建变量，应使用简化变量声明方式。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// Go中，通道channel，映射map，切片slice都是引用类型(需要初始化)，但是通道本身实现的是一组带类型的值，此组值用于在goroutine之间传递数据，而且通道内置同步机制，保证通信安全，第6章进一步介绍。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//以下两行是为了防止程序在全部搜索执行完之前终止
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//Go中main函数返回后,整个程序终止，Go程序终止后还会关闭之前启动了的goroutine，写并发程序的时候，最好就是在main函数返回之前关闭goroutine，有助于减少bug。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 使用sync包中的WaitGroup函数构造一个waitGroup，以便处理所有的数据源
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// WaitGroup是一个计数信号量，使用它统计所有goroutine是否都完成了工作。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// Setup a wait group so we can process all the feeds.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">var</span> <span class="nx">waitGroup</span> <span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// 设置我们需要等待处理的每个数据源的goroutine数量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// Set the number of goroutines we need to wait for while
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// they process the individual feeds.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">waitGroup</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">feeds</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//把定义的waitGroup变量的值设置为goroutine启动的数量，每个goroutine完成后，其值会递减，若值为0则代表goroutine所有工作结束。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// Launch a goroutine for each feed to find the results.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 为每个数据源启动一个goroutine来查找结果
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">feed</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">feeds</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// for range对feeds切片迭代，range可以迭代数组、字符串、切片、映射和通道
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">// for range迭代切片时，每次返回两个值，第一个值是迭代的值在切片里的索引位置。第二个值是元素值的一个副本。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">// 下划线_占用了索引值的位置，意味着把索引值忽略。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">// Retrieve a matcher for the search.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">// 获取一个用于查找的匹配器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">matcher</span><span class="p">,</span> <span class="nx">exists</span> <span class="o">:=</span> <span class="nx">matchers</span><span class="p">[</span><span class="nx">feed</span><span class="p">.</span><span class="nx">Type</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// 检查map中是否含有符合数据源类型的值，查找map中的键时，可以赋一个值，也可以赋两个值，第一个值代表map查找到的结果值，第二个值是布尔类型，查找的值存在map中则返回副本，否则返回零值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="p">!</span><span class="nx">exists</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">// 判断这个键是否存在于map中，若不存在则使用默认匹配器，这样在不知道数据源具体类型时也可以执行。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="nx">matcher</span> <span class="p">=</span> <span class="nx">matchers</span><span class="p">[</span><span class="s">&#34;default&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="c1">// Launch the goroutine to perform the search.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">// knowledge:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">// goroutine是一个独立于其它函数的函数，使用go关键字来启动一个goroutine，并对其做并发调度。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">// 启动一个goroutine执行搜索
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">go</span> <span class="kd">func</span><span class="p">(</span><span class="nx">matcher</span> <span class="nx">Matcher</span><span class="p">,</span> <span class="nx">feed</span> <span class="o">*</span><span class="nx">Feed</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">// 以goroutine的方式启动一个匿名函数，这样可以并发独立的处理每个数据源的数据。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="c1">// 指定匿名函数接收两个参数，一个类型为Matcher，一个是指向Feed类型的指针，所以feed是一个指针变量。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="c1">// 指针变量方便在函数间共享数据，使用指针变量可以让函数访问并修改一个变量的状态，这个变量可以在其它函数甚至其它goroutine的作用域里声明。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="nf">Match</span><span class="p">(</span><span class="nx">matcher</span><span class="p">,</span> <span class="nx">feed</span><span class="p">,</span> <span class="nx">searchTerm</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">// goroutine第一件事是调用Match函数，参数分别是Matcher类型的值，一个指向Feed类型值的指针，搜索项以及输出结果的通道。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="c1">// Matcher函数会搜索数据源的数据，并将匹配结果输出到results通道
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="nx">waitGroup</span><span class="p">.</span><span class="nf">Done</span><span class="p">()</span><span class="c1">//递减WaitGroup的计数。可以看到WaitGroup的值没有传入匿名函数，但是匿名函数依然访问到了这个值。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="c1">// 此处应用到了闭包，实际上，searchTerm和results变量也是通过闭包的形式访问的，函数可以直接访问到那些没有作为参数传入的变量。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="c1">// 匿名函数实际是直接访问外层函数作用域中声明的这些变量本身，而不是副本。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="c1">// matcher和feed变量每次调用值都不同，所以没有使用闭包的方式访问。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">}(</span><span class="nx">matcher</span><span class="p">,</span> <span class="nx">feed</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// matcher和feed两个变量的值被传入匿名函数，Go中所有的变量都以值的方式传递。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Launch a goroutine to monitor when all the work is done.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 启动一个goroutine来监控是否所有工作完成
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 此段代码等看完search包再解释，表面意思是：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 以goroutine方式启动了另一个匿名函数，没有输入参数，使用闭包访问了WaitGroup和results变量。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 这个goroutine调用了WaitGroup的wait方法，此方法会阻塞goroutine，直到WaitGroup内部计数变为0，之后goroutine调用close函数关闭通道，终止程序。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// Wait for everything to be processed.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">// 等候任务完成
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">waitGroup</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="c1">// Close the channel to signal to the Display
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">// 用关闭通道的方式来通知Display函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">// function that we can exit the program.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">// 退出程序
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nb">close</span><span class="p">(</span><span class="nx">results</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Start displaying results as they are available and
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// return after the final result is displayed.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 启动函数显示返回的结果，并且在最后一个结果显示完后返回
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nf">Display</span><span class="p">(</span><span class="nx">results</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Register is called to register a matcher for use by the program.
+</span></span></span><span class="line"><span class="cl"><span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">Register</span><span class="p">(</span><span class="nx">feedType</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">matcher</span> <span class="nx">Matcher</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">exists</span> <span class="o">:=</span> <span class="nx">matchers</span><span class="p">[</span><span class="nx">feedType</span><span class="p">];</span> <span class="nx">exists</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatalln</span><span class="p">(</span><span class="nx">feedType</span><span class="p">,</span> <span class="s">&#34;Matcher already registered&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Register&#34;</span><span class="p">,</span> <span class="nx">feedType</span><span class="p">,</span> <span class="s">&#34;matcher&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">matchers</span><span class="p">[</span><span class="nx">feedType</span><span class="p">]</span> <span class="p">=</span> <span class="nx">matcher</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="232-feedgo">2.3.2 feed.go</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">search</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;encoding/json&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// json包提供编解码JSON的功能，导入json包的时候需要指定encoding的路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="s">&#34;os&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// os包提供访问操作系统的功能，如读文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">dataFile</span> <span class="p">=</span> <span class="s">&#34;data/data.json&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 声明了一个叫做dataFile的常量，小写字母开头，所以只能在search包内直接访问，不能暴露到外面
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Feed contains information we need to process a feed.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 声明了一个名为Feed的结构类型，这个类型会对外暴露(大写)，包含3个字段，每个字段类型都是字符串，对应数据文件中各个文档的不同字段。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// `号里面称作标记tag，标记描述了JSON解码的元数据，用于创建Feed类型值的切片。每个标记将结构类型里字段对应到JSON文档里指定名字的字段。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">Feed</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Name</span> <span class="kt">string</span> <span class="s">`json:&#34;site&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">URI</span>  <span class="kt">string</span> <span class="s">`json:&#34;link&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Type</span> <span class="kt">string</span> <span class="s">`json:&#34;type&#34;`</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// RetrieveFeeds函数读取数据文件，并将每个JSON文档解码，存入一个Feed类型的切片里。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// RetrieveFeeds reads and unmarshals the feed data file.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// RetrieveFeeds读取并反序列化源数据文件
+</span></span></span><span class="line"><span class="cl"><span class="c1">// RetrieveFeeds没有参数，返回两个值，第一个值返回的是一个切片，每项指向一个Feed类型的值。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 第二个值返回的是一个error类型的值，表示函数调用是否成功。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">RetrieveFeeds</span><span class="p">()</span> <span class="p">([]</span><span class="o">*</span><span class="nx">Feed</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// Open the file.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 使用os包中的open方法，相对路径进行读取，返回两个值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 第一个返回值是一个指针，指向File类型。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 第二个返回值是error类型的值，检查Open调用是否成功，若出错则返回错误代码。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">file</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nf">Open</span><span class="p">(</span><span class="nx">dataFile</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">err</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// 成功打开文件后：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// Schedule the file to be closed once
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// the function returns.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 当函数返回时关闭文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">defer</span> <span class="nx">file</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 在函数返回后defer才会安排执行之后的关闭文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// defer的目的是提高代码可读性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// Decode the file into a slice of pointers
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 将文件解码到一个切片里
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// to Feed values.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 这个切片的每一项是一个指向一个Feed类型值的指针
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 名为feeds,值为nil的切片,包含一组指向Feed类型的指针
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">var</span> <span class="nx">feeds</span> <span class="p">[]</span><span class="o">*</span><span class="nx">Feed</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 调用json包的NewDecoder函数,在其返回值上调用Decode方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">err</span> <span class="p">=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">NewDecoder</span><span class="p">(</span><span class="nx">file</span><span class="p">).</span><span class="nf">Decode</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">feeds</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 使用之前调用Open返回的文件句柄调用NewDecoder函数,得到一个指向Decoder类型的值的指针
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 再调用这个指针的Decode方法传入切片的地址,之后Decode方法解码数据文件,解码后的值以Feed类型的形式存入切片里.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// We don&#39;t need to check for errors, the caller can do this.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 此函数不需要检查错误，调用者会做此事。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">return</span> <span class="nx">feeds</span><span class="p">,</span> <span class="nx">err</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 返回切片和错误值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// func (dec *Decoder) Decode(v interface{}) error
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// Decode方法接收一个类型为interface{}的值作为参数,此类型比较特殊,一般配合reflect包里提供的反射功能使用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="233-matchgodefaultgo">2.3.3 match.go/default.go</h3>
+<ol>
+<li>match.go</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// match.go中包含创建不同类型匹配器的代码,用于在Run函数里对数据的搜索.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kn">package</span> <span class="nx">search</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;log&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Result contains the result of a search.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Result保存搜索的结果
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">Result</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Field</span>   <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Content</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Matcher defines the behavior required by types that want
+</span></span></span><span class="line"><span class="cl"><span class="c1">// to implement a new search type.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Matcher定义了要实现的新搜索类型的行为
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 声明了一个interface接口,这个接口声明了结构类型或者具名类型需要实现的行为
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Go中的命名惯例是,如果接口类型只包含一个方法,那么这个类型的名字以er结尾,例子中的名字叫做Matcher.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 如果接口类型内部声明了多个方法,其名字需要与其行为体关联
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">Matcher</span> <span class="kd">interface</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">Search</span><span class="p">(</span><span class="nx">feed</span> <span class="o">*</span><span class="nx">Feed</span><span class="p">,</span> <span class="nx">searchTerm</span> <span class="kt">string</span><span class="p">)</span> <span class="p">([]</span><span class="o">*</span><span class="nx">Result</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 对于Matcher这个接口来说,只声明了一个Search方法,这个方法输入一个指向Feed类型值的指针和一个string类型的搜索项
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 该方法返回两个值,一个指向Result类型值的指针的切片.另一个是错误值.Result类型的声明在上面那个结构类型中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Match is launched as a goroutine for each individual feed to run
+</span></span></span><span class="line"><span class="cl"><span class="c1">// searches concurrently.
+</span></span></span><span class="line"><span class="cl"><span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">Match</span><span class="p">(</span><span class="nx">matcher</span> <span class="nx">Matcher</span><span class="p">,</span> <span class="nx">feed</span> <span class="o">*</span><span class="nx">Feed</span><span class="p">,</span> <span class="nx">searchTerm</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">results</span> <span class="kd">chan</span><span class="o">&lt;-</span> <span class="o">*</span><span class="nx">Result</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// Perform the search against the specified matcher.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">searchResults</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">matcher</span><span class="p">.</span><span class="nf">Search</span><span class="p">(</span><span class="nx">feed</span><span class="p">,</span> <span class="nx">searchTerm</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Write the results to the channel.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">result</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">searchResults</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">results</span> <span class="o">&lt;-</span> <span class="nx">result</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Display writes results to the console window as they
+</span></span></span><span class="line"><span class="cl"><span class="c1">// are received by the individual goroutines.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">Display</span><span class="p">(</span><span class="nx">results</span> <span class="kd">chan</span> <span class="o">*</span><span class="nx">Result</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// The channel blocks until a result is written to the channel.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// Once the channel is closed the for loop terminates.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">for</span> <span class="nx">result</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">results</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%s:\n%s\n\n&#34;</span><span class="p">,</span> <span class="nx">result</span><span class="p">.</span><span class="nx">Field</span><span class="p">,</span> <span class="nx">result</span><span class="p">.</span><span class="nx">Content</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>default.go</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 如果让一个用户定义的类型实现一个接口,这个用户定义的类型要实现接口类型里声明的所有方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kn">package</span> <span class="nx">search</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// defaultMatcher implements the default matcher.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// defaultMatcher实现了默认匹配器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">defaultMatcher</span> <span class="kd">struct</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 使用一个空结构声明了一个名为defaultMatcher的结构类型.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 空结构在创建实例时不会分配任何内存,适合创建没有任何状态的类型
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 默认匹配器不需要维护任何状态,因此只需要实现对应的接口即可
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// init registers the default matcher with the program.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// init函数将默认匹配器注册到程序里
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">matcher</span> <span class="nx">defaultMatcher</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">Register</span><span class="p">(</span><span class="s">&#34;default&#34;</span><span class="p">,</span> <span class="nx">matcher</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Search implements the behavior for the default matcher.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Search实现了默认匹配器的行为
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">m</span> <span class="nx">defaultMatcher</span><span class="p">)</span> <span class="nf">Search</span><span class="p">(</span><span class="nx">feed</span> <span class="o">*</span><span class="nx">Feed</span><span class="p">,</span> <span class="nx">searchTerm</span> <span class="kt">string</span><span class="p">)</span> <span class="p">([]</span><span class="o">*</span><span class="nx">Result</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="24-rss匹配器">2.4 RSS匹配器</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">matchers</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;encoding/xml&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;errors&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;log&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;net/http&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;regexp&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;github.com/goinaction/code/chapter2/sample/search&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// item defines the fields associated with the item tag
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// in the rss document.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">item</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">XMLName</span>     <span class="nx">xml</span><span class="p">.</span><span class="nx">Name</span> <span class="s">`xml:&#34;item&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">PubDate</span>     <span class="kt">string</span>   <span class="s">`xml:&#34;pubDate&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Title</span>       <span class="kt">string</span>   <span class="s">`xml:&#34;title&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Description</span> <span class="kt">string</span>   <span class="s">`xml:&#34;description&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Link</span>        <span class="kt">string</span>   <span class="s">`xml:&#34;link&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">GUID</span>        <span class="kt">string</span>   <span class="s">`xml:&#34;guid&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">GeoRssPoint</span> <span class="kt">string</span>   <span class="s">`xml:&#34;georss:point&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// image defines the fields associated with the image tag
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// in the rss document.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">image</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">XMLName</span> <span class="nx">xml</span><span class="p">.</span><span class="nx">Name</span> <span class="s">`xml:&#34;image&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">URL</span>     <span class="kt">string</span>   <span class="s">`xml:&#34;url&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Title</span>   <span class="kt">string</span>   <span class="s">`xml:&#34;title&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Link</span>    <span class="kt">string</span>   <span class="s">`xml:&#34;link&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// channel defines the fields associated with the channel tag
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// in the rss document.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">channel</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">XMLName</span>        <span class="nx">xml</span><span class="p">.</span><span class="nx">Name</span> <span class="s">`xml:&#34;channel&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Title</span>          <span class="kt">string</span>   <span class="s">`xml:&#34;title&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Description</span>    <span class="kt">string</span>   <span class="s">`xml:&#34;description&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Link</span>           <span class="kt">string</span>   <span class="s">`xml:&#34;link&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">PubDate</span>        <span class="kt">string</span>   <span class="s">`xml:&#34;pubDate&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">LastBuildDate</span>  <span class="kt">string</span>   <span class="s">`xml:&#34;lastBuildDate&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">TTL</span>            <span class="kt">string</span>   <span class="s">`xml:&#34;ttl&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Language</span>       <span class="kt">string</span>   <span class="s">`xml:&#34;language&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">ManagingEditor</span> <span class="kt">string</span>   <span class="s">`xml:&#34;managingEditor&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">WebMaster</span>      <span class="kt">string</span>   <span class="s">`xml:&#34;webMaster&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Image</span>          <span class="nx">image</span>    <span class="s">`xml:&#34;image&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Item</span>           <span class="p">[]</span><span class="nx">item</span>   <span class="s">`xml:&#34;item&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// rssDocument defines the fields associated with the rss document.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">rssDocument</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">XMLName</span> <span class="nx">xml</span><span class="p">.</span><span class="nx">Name</span> <span class="s">`xml:&#34;rss&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Channel</span> <span class="nx">channel</span>  <span class="s">`xml:&#34;channel&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// rssMatcher implements the Matcher interface.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">rssMatcher</span> <span class="kd">struct</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// init registers the matcher with the program.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">init</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">matcher</span> <span class="nx">rssMatcher</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">search</span><span class="p">.</span><span class="nf">Register</span><span class="p">(</span><span class="s">&#34;rss&#34;</span><span class="p">,</span> <span class="nx">matcher</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Search looks at the document for the specified search term.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">m</span> <span class="nx">rssMatcher</span><span class="p">)</span> <span class="nf">Search</span><span class="p">(</span><span class="nx">feed</span> <span class="o">*</span><span class="nx">search</span><span class="p">.</span><span class="nx">Feed</span><span class="p">,</span> <span class="nx">searchTerm</span> <span class="kt">string</span><span class="p">)</span> <span class="p">([]</span><span class="o">*</span><span class="nx">search</span><span class="p">.</span><span class="nx">Result</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">results</span> <span class="p">[]</span><span class="o">*</span><span class="nx">search</span><span class="p">.</span><span class="nx">Result</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Search Feed Type[%s] Site[%s] For URI[%s]\n&#34;</span><span class="p">,</span> <span class="nx">feed</span><span class="p">.</span><span class="nx">Type</span><span class="p">,</span> <span class="nx">feed</span><span class="p">.</span><span class="nx">Name</span><span class="p">,</span> <span class="nx">feed</span><span class="p">.</span><span class="nx">URI</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Retrieve the data to search.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">document</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">m</span><span class="p">.</span><span class="nf">retrieve</span><span class="p">(</span><span class="nx">feed</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">err</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">channelItem</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">document</span><span class="p">.</span><span class="nx">Channel</span><span class="p">.</span><span class="nx">Item</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">// Check the title for the search term.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">matched</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">regexp</span><span class="p">.</span><span class="nf">MatchString</span><span class="p">(</span><span class="nx">searchTerm</span><span class="p">,</span> <span class="nx">channelItem</span><span class="p">.</span><span class="nx">Title</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">err</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="c1">// If we found a match save the result.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="nx">matched</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">results</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">results</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">search</span><span class="p">.</span><span class="nx">Result</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="nx">Field</span><span class="p">:</span>   <span class="s">&#34;Title&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				<span class="nx">Content</span><span class="p">:</span> <span class="nx">channelItem</span><span class="p">.</span><span class="nx">Title</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="p">})</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="c1">// Check the description for the search term.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">matched</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">regexp</span><span class="p">.</span><span class="nf">MatchString</span><span class="p">(</span><span class="nx">searchTerm</span><span class="p">,</span> <span class="nx">channelItem</span><span class="p">.</span><span class="nx">Description</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">err</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="c1">// If we found a match save the result.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="nx">matched</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">results</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">results</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">search</span><span class="p">.</span><span class="nx">Result</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="nx">Field</span><span class="p">:</span>   <span class="s">&#34;Description&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				<span class="nx">Content</span><span class="p">:</span> <span class="nx">channelItem</span><span class="p">.</span><span class="nx">Description</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="p">})</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">results</span><span class="p">,</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// retrieve performs a HTTP Get request for the rss feed and decodes the results.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">m</span> <span class="nx">rssMatcher</span><span class="p">)</span> <span class="nf">retrieve</span><span class="p">(</span><span class="nx">feed</span> <span class="o">*</span><span class="nx">search</span><span class="p">.</span><span class="nx">Feed</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="nx">rssDocument</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">feed</span><span class="p">.</span><span class="nx">URI</span> <span class="o">==</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;No rss feed uri provided&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Retrieve the rss feed document from the web.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">resp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="nx">feed</span><span class="p">.</span><span class="nx">URI</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">err</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Close the response once we return from the function.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">defer</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Check the status code for a 200 so we know we have received a
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// proper response.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">StatusCode</span> <span class="o">!=</span> <span class="mi">200</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;HTTP Response Error %d\n&#34;</span><span class="p">,</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">StatusCode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Decode the rss feed document into our struct type.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// We don&#39;t need to check for errors, the caller can do this.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">var</span> <span class="nx">document</span> <span class="nx">rssDocument</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">err</span> <span class="p">=</span> <span class="nx">xml</span><span class="p">.</span><span class="nf">NewDecoder</span><span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">).</span><span class="nf">Decode</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">document</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">document</span><span class="p">,</span> <span class="nx">err</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-11-30</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nswy123.top/goinaction_section2/" data-title="Go语言实战第二章_快速开始一个Go程序" data-hashtags="Notes,Golang"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://nswy123.top/goinaction_section2/" data-hashtag="Notes"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Pinterest" data-sharer="pinterest" data-url="https://nswy123.top/goinaction_section2/" data-description="第二章 快速开始一个Go程序"><i class="fab fa-pinterest fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://nswy123.top/goinaction_section2/"><i class="fab fa-reddit fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nswy123.top/goinaction_section2/" data-title="Go语言实战第二章_快速开始一个Go程序"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/notes/">Notes</a>,&nbsp;<a href="/tags/golang/">Golang</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E6%8C%87%E9%92%88/" class="prev" rel="prev" title="Go语言基础_指针"><i class="fas fa-angle-left fa-fw"></i>Go语言基础_指针</a>
+            <a href="/leetcode_twosum/" class="next" rel="next" title="LeetCode_twoSum">LeetCode_twoSum<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://nswy123.top/" target="_blank" rel="noopener noreferrer">nswy123</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"valine":{"appId":"hSzpoeCkSl84iDWzbj2QvB57-gzGzoHsz","appKey":"sO8QRmzW5Y9bvn11MdNQe6s4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"serverURLs":"https://hszpoeck.lc-cn-n1-shared.com","visitor":true}},"data":{"id-1":"nswy123","id-2":"nswy123"},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-172653330-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-172653330-1" async></script></body>
+</html>

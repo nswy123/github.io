@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>doom-emacs - 标签 - nswy123</title>
+        <link>https://nswy123.top/tags/doom-emacs/</link>
+        <description>doom-emacs - 标签 - nswy123</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 04 Nov 2020 12:15:10 &#43;0800</lastBuildDate><atom:link href="https://nswy123.top/tags/doom-emacs/" rel="self" type="application/rss+xml" /><item>
+    <title>doom-emacs的配置文件(LST)</title>
+    <link>https://nswy123.top/doom-emacs-configure/</link>
+    <pubDate>Wed, 04 Nov 2020 12:15:10 &#43;0800</pubDate><dc:creator>nswy123</dc:creator><guid>https://nswy123.top/doom-emacs-configure/</guid>
+    <description><![CDATA[doom-emacs的配置文件(LST)]]></description>
+</item><item>
+    <title>Beancounts</title>
+    <link>https://nswy123.top/beancount/</link>
+    <pubDate>Mon, 21 Sep 2020 16:30:40 &#43;0800</pubDate><dc:creator>nswy123</dc:creator><guid>https://nswy123.top/beancount/</guid>
+    <description><![CDATA[Beancounts复式记账]]></description>
+</item></channel>
+</rss>

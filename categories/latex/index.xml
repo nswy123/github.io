@@ -1,0 +1,12 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>LaTeX - 分类 - nswy123</title>
+        <link>https://nswy123.top/categories/latex/</link>
+        <description>LaTeX - 分类 - nswy123</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 18 Oct 2020 09:44:50 &#43;0800</lastBuildDate><atom:link href="https://nswy123.top/categories/latex/" rel="self" type="application/rss+xml" /><item>
+    <title>LaTeX_notes</title>
+    <link>https://nswy123.top/latex/</link>
+    <pubDate>Sun, 18 Oct 2020 09:44:50 &#43;0800</pubDate><dc:creator>nswy123</dc:creator><guid>https://nswy123.top/latex/</guid>
+    <description><![CDATA[LaTeX_notes]]></description>
+</item></channel>
+</rss>

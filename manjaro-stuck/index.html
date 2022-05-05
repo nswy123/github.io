@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Manjaro显卡驱动问题开机黑屏，配置源，机场etc - nswy123</title><meta name="description" content="Manjaro显卡驱动问题开机黑屏，配置源，机场etc"><meta property="og:title" content="Manjaro显卡驱动问题开机黑屏，配置源，机场etc" />
+<meta property="og:description" content="Manjaro显卡驱动问题开机黑屏，配置源，机场etc" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nswy123.top/manjaro-stuck/" /><meta property="og:image" content="https://nswy123.top/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-03-23T17:13:20+08:00" />
+<meta property="article:modified_time" content="2020-10-03T22:10:20+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://nswy123.top/"/>
+
+<meta name="twitter:title" content="Manjaro显卡驱动问题开机黑屏，配置源，机场etc"/>
+<meta name="twitter:description" content="Manjaro显卡驱动问题开机黑屏，配置源，机场etc"/>
+<meta name="application-name" content="nswy123">
+<meta name="apple-mobile-web-app-title" content="nswy123"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://nswy123.top/manjaro-stuck/" /><link rel="prev" href="https://nswy123.top/baloo_file/" /><link rel="next" href="https://nswy123.top/block_to_i-beam/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="q5BcEw2yTxdK8dJmgEJzJ8-vts8kA165bdHVuqhs5qM" /><meta name="msvalidate.01" content="B0B44AE9BE225A80728C76B48480B504" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Manjaro显卡驱动问题开机黑屏，配置源，机场etc",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/nswy123.top\/manjaro-stuck\/"
+        },"image": ["https:\/\/nswy123.top\/assets\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Manjaro, 独立显卡, 机场","wordcount":  2108 ,
+        "url": "https:\/\/nswy123.top\/manjaro-stuck\/","datePublished": "2020-03-23T17:13:20+08:00","dateModified": "2020-10-03T22:10:20+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "nswy123","logo": "https:\/\/nswy123.top\/assets\/images\/head.jpg"},"author": {
+                "@type": "Person",
+                "name": "nswy123"
+            },"description": "Manjaro显卡驱动问题开机黑屏，配置源，机场etc"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="nswy123"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/friendlinks/"> 友链 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/nswy123" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="nswy123"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/friendlinks/" title="">友链</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/nswy123" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Manjaro显卡驱动问题开机黑屏，配置源，机场etc</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://nswy123.github.io" title="Author" target="_blank" rel="noopener noreferrer author" class="author"><i class="fas fa-user-circle fa-fw"></i>nswy123</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw"></i>Linux</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-23">2020-03-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2108 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/manjaro-stuck/" class="leancloud_visitors" data-flag-title="Manjaro显卡驱动问题开机黑屏，配置源，机场etc">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1安装">1、安装</a></li>
+    <li><a href="#2遇到的问题安装时卡住">2、遇到的问题(安装时卡住)</a>
+      <ul>
+        <li><a href="#21-解决方法">2.1 解决方法</a></li>
+        <li><a href="#22-分区安装完成以后重启依然会黑屏解决方法">2.2 分区安装完成以后，重启依然会黑屏，解决方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#3配置pacman源">3、配置pacman源</a></li>
+    <li><a href="#4配置archlinuxcn源">4、配置archlinuxcn源</a></li>
+    <li><a href="#5设置代理">5、设置代理</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#51-配置qv2ray">5.1 配置qv2ray</a></li>
+            <li><a href="#52-配置trojan">5.2 配置trojan</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#6推荐的机场">6、推荐的机场</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="1安装">1、安装</h2>
+<p>刻录软件：<a href="https://rufus.ie/" target="_blank" rel="noopener noreferrer">rufus</a>，刻录模式建议选择dd</p>
+<h2 id="2遇到的问题安装时卡住">2、遇到的问题(安装时卡住)</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Started TLP system startup/shutdown
+</span></span><span class="line"><span class="cl">A start job is running <span class="k">for</span> livemedia mhwd scripe<span class="o">(</span>xxxx<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="21-解决方法">2.1 解决方法</h3>
+<ol>
+<li>引导开机后进入安装启动界面，选择BOOT栏</li>
+<li>按e键进入编辑模式，将driver=free改成driver=intel</li>
+<li>在后面加上xdriver=mesa acpi_osi=! acpi_osi=&ldquo;Windows 2009&rdquo;</li>
+<li>按ctrl+x或F10启动</li>
+</ol>
+<p>此时可以进入安装界面，可参考其他教程按自己所需进行分区，我个人一般不分配/home空间，直接大部分给/，即根目录，swap分区因为笔记本16g的内存，我会给到8g，这个看个人情况，/boot启动分区最为重要，一定要记住盘区/sd*，将其设置为启动引导分区，切勿选错。</p>
+<h3 id="22-分区安装完成以后重启依然会黑屏解决方法">2.2 分区安装完成以后，重启依然会黑屏，解决方法</h3>
+<p>启动进入grub引导界面，默认即Manjaro选项卡，在此选项卡按e进入编辑页面，在倒数第二行找到quite，在其后添加</p>
+<blockquote>
+<p>acpi_osi=! acpi_osi=&lsquo;Windows 2009&rsquo;</p>
+</blockquote>
+<p>然后按F10进入系统，进入系统修改启动文件grub.cfg来彻底解决黑屏问题。
+打开终端，输入</p>
+<blockquote>
+<p>sudo nano /boot/grub/grub.cfg</p>
+</blockquote>
+<p><font color=#ff0000 size=3>如果没有安装nano可以使用vim或者vi打开</font></p>
+<blockquote>
+<p>sudo vim /boot/grub/grub.cfg
+sudo vi /boot/grub/grub.cfg</p>
+</blockquote>
+<p>打开后找到<font color=#ff0000 size=3>linux   /boot/vmlinuz-5.4-x86_64 root=UUID=a9b1b419-f272-4f3c-90ae-30c57807cb1e rw  quiet</font>这一行(可以直接使用查找快捷键，ctrl+w，输入quiet，直接定位到quiet的位置)，不同linux版本可能有一些差别，在quiet后面添加<font color=#ff0000 size=3>xdriver=mesa acpi_osi=! acpi_osi=&ldquo;Windows 2009&rdquo;</font>即可,按ctrl+o(字母)提示保存，再按回车，然后按ctrl+x退出。</p>
+<h2 id="3配置pacman源">3、配置pacman源</h2>
+<blockquote>
+<p>sudo pacman-mirrors -i -c China -m rank</p>
+</blockquote>
+<p>在弹出的窗口选择合适的来使用</p>
+<h2 id="4配置archlinuxcn源">4、配置archlinuxcn源</h2>
+<blockquote>
+<p>sudo nano /etc/pacman.conf</p>
+</blockquote>
+<p>在末尾添加以下内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>archlinuxcn<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SigLevel</span> <span class="o">=</span> Optional TrustedOnly
+</span></span><span class="line"><span class="cl"><span class="nv">Server</span> <span class="o">=</span> http://repo.archlinuxcn.org/<span class="nv">$arch</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>之后执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo pacman-mirrors -g      <span class="c1">#更新</span>
+</span></span><span class="line"><span class="cl">sudo pacman -Syyu           <span class="c1">#更新系统</span>
+</span></span><span class="line"><span class="cl">sudo pacman -S archlinuxcn-keyring  <span class="c1">#导入keyring</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="5设置代理">5、设置代理</h2>
+<p>目前比较稳定的如v2ray和trojan</p>
+<ol>
+<li>
+<p>windows端建议使用<a href="https://github.com/2dust/v2rayN/releases" target="_blank" rel="noopener noreferrer">v2rayN-Release</a>，打开后选择v2rayN-Core.zip下载，鉴于国内下载速度比较慢，点击从<a href="https://www.jianguoyun.com/p/DTnfSooQ9KvTBhiyya0D" target="_blank" rel="noopener noreferrer">坚果云</a>(3.19版本)下载。(<font color=#ff0000 size=3>注:坚果云需要注册才能使用</font>)</p>
+</li>
+<li>
+<p>linux(manjaro&amp;archlinux)端的GUI软件推荐<a href="https://github.com/trojan-gfw/trojan" target="_blank" rel="noopener noreferrer">trojan</a>和<a href="https://github.com/Qv2ray/Qv2ray" target="_blank" rel="noopener noreferrer">qv2ray</a>,qv2ray核心用的<a href="https://github.com/v2ray/v2ray-core" target="_blank" rel="noopener noreferrer">v2ray</a>,点击跳转到qv2ray的<a href="https://github.com/Qv2ray/Qv2ray/releases" target="_blank" rel="noopener noreferrer">下载地址</a>或者直接使用命令安装：</p>
+</li>
+</ol>
+<blockquote>
+<p>sudo pacman -S v2ray qv2ray</p>
+</blockquote>
+<p><a href="https://github.com/trojan-gfw/trojan" target="_blank" rel="noopener noreferrer">trojan</a>的安装方法</p>
+<blockquote>
+<p>sudo pacman -S trojan</p>
+</blockquote>
+<p>trojan安装完后需要配置一下，详情看下面说明。<font color=#ff0000 size=3>(20, July 2020 update, qv2ray has developed a plugin for trojan, so you just to use qv2ray.)</font></p>
+<ol start="3">
+<li>mac端使用<a href="https://github.com/yichengchen/clashX/releases" target="_blank" rel="noopener noreferrer">clashx</a>或者<a href="https://github.com/Qv2ray/Qv2ray" target="_blank" rel="noopener noreferrer">qv2ray</a>,clashx在mac端使用方法比较简单，<font color=#8888 size=3>现在先鸽一下，有空再写</font>。</li>
+</ol>
+<h4 id="51-配置qv2ray">5.1 配置qv2ray</h4>
+<p>qv2ray图形界面比较容易操作，根据机场提供的订阅地址输入后即可以代理。如图，点击左上角订阅，然后输入订阅地址既可。具体可以参考<a href="https://github.com/Qv2ray/Qv2ray/wiki/Getting-Started-step0_zh" target="_blank" rel="noopener noreferrer">wiki</a>,(<font color=#ff0000>20,July 2020 update,qv2ray have a new version, and it has complished very well, please try to update it.</font>)
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/nswy123/MarkDownImages/master/qv2ray.png"
+        data-srcset="https://raw.githubusercontent.com/nswy123/MarkDownImages/master/qv2ray.png, https://raw.githubusercontent.com/nswy123/MarkDownImages/master/qv2ray.png 1.5x, https://raw.githubusercontent.com/nswy123/MarkDownImages/master/qv2ray.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/nswy123/MarkDownImages/master/qv2ray.png"
+        title=" " /></p>
+<h4 id="52-配置trojan">5.2 配置trojan</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo nano /etc/trojan/config.json
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>打开配置文件后只需要更改以下几个选项</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">    <span class="s2">&#34;run_type&#34;</span>: <span class="s2">&#34;client&#34;</span>,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;local_addr&#34;</span>: <span class="s2">&#34;127.0.0.1&#34;</span>,  //此为本地地址
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;local_port&#34;</span>: 1080,         //设置端口，可根据自己需要更改
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;remote_addr&#34;</span>: <span class="s2">&#34;此地址由机场提供&#34;</span>,//机场提供的地址
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;remote_port&#34;</span>: 443,            // 机场提供的端口
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;password&#34;</span>: <span class="o">[</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;input password&#34;</span>     //机场提供的密码
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>设置完毕后按ctrl+o(字母)提示保存，再按回车，按ctrl+x退出</p>
+<h2 id="6推荐的机场">6、推荐的机场</h2>
+<p><del><font color=#ff0000 size=3>(20, July 2020 update)</font>我目前在用的机场，机场用的v2ray协议，现在还算稳定，速度每个时间段不同，(我是第1组进的，1组现在不限速好像，设备可以用3个，不过现在已经分成好几个组了，速度跟一开始没法比，但我个人认为自己用还是绰绰有余，家用宽带为200m，youtube没有卡过)，价格也还可以，有一个1元的两天套餐可以先体验，我个人认为比较合适的套餐:
+<font color=#ff0000>128g/mon:季付38,年付88(My choose);
+256g/mon:年付128;</font>
+还有其他的套餐可以去网站注册后自行查看，我个人认为上面两个套餐选哪个都够用了，我一个月大概才用10-20g流量，远远足够，不过每个人可以根据自己的需求使用，点击<a href="https://pud.life/aff/geOg" target="_blank" rel="noopener noreferrer">链接</a>进行注册，祝大家用的愉快。</del></p>
+<p><font color=#ff0000 size=3>(03, Oct 2020 update)</font>布丁跑路了~太惨了，我还有一年多的流量没用，这波促销后携款跑路是真的骚。大家还是尽量使用大机场吧！我目前使用的是之前    买的搬瓦工洛杉矶cn线路vps，大概是17年买的，还是18刀左右一年，自己先搭了一个v2ray使用，速度还可以，网上有一键安装的脚本，安装还是很方便的，就是怕ip被封禁，换个ip大概三分之一的套餐的价格了，实在不值得，等改日再写一下。目前还是推荐的搬瓦工自己的机场，<a href="https://justmysocks.net/" target="_blank" rel="noopener noreferrer">JustMySocks</a>，可以无限换ip不怕被墙，目前套餐最便宜的好像是美国地区一年400人民币，有需要的人可以先考虑此方案，还有有一个美国地区一年一百多的套餐售罄，等上货了再入手。目前先这样，最近作业有些多，好不容易有个几天假期，我又折腾了一波路由器，今天总算折腾完了，软路由刷了eSir的GDQ版，好是好就是小主机功率有点高，先束之高阁吧，k2p本来打算做ap，但是不上软路由，k2p就当主力了，今天刷了breed用的官改版，本来想继续试一试老毛子的固件，折腾的太晚了，又和同学聊了会天，就先搁置吧，毕竟刷了breed就不怕成砖了，这一段时间先静一下心，过完这个国庆节，希望这学期能够有所收获。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-10-03</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nswy123.top/manjaro-stuck/" data-title="Manjaro显卡驱动问题开机黑屏，配置源，机场etc" data-hashtags="Manjaro,独立显卡,机场"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://nswy123.top/manjaro-stuck/" data-hashtag="Manjaro"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Pinterest" data-sharer="pinterest" data-url="https://nswy123.top/manjaro-stuck/" data-description="Manjaro显卡驱动问题开机黑屏，配置源，机场etc"><i class="fab fa-pinterest fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://nswy123.top/manjaro-stuck/"><i class="fab fa-reddit fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nswy123.top/manjaro-stuck/" data-title="Manjaro显卡驱动问题开机黑屏，配置源，机场etc"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/manjaro/">manjaro</a>,&nbsp;<a href="/tags/%E7%8B%AC%E7%AB%8B%E6%98%BE%E5%8D%A1/">独立显卡</a>,&nbsp;<a href="/tags/%E6%9C%BA%E5%9C%BA/">机场</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/baloo_file/" class="prev" rel="prev" title="KDE开机baloo_file_extractor占用cpu过高导致卡顿问题"><i class="fas fa-angle-left fa-fw"></i>KDE开机baloo_file_extractor占用cpu过高导致卡顿问题</a>
+            <a href="/block_to_i-beam/" class="next" rel="next" title="spacemacs block cursor change to I-beam, and themes install">spacemacs block cursor change to I-beam, and themes install<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://nswy123.top/" target="_blank" rel="noopener noreferrer">nswy123</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"valine":{"appId":"hSzpoeCkSl84iDWzbj2QvB57-gzGzoHsz","appKey":"sO8QRmzW5Y9bvn11MdNQe6s4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"serverURLs":"https://hszpoeck.lc-cn-n1-shared.com","visitor":true}},"data":{"id-1":"nswy123","id-2":"nswy123"},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-172653330-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-172653330-1" async></script></body>
+</html>

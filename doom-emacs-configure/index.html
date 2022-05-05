@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>doom-emacs的配置文件(LST) - nswy123</title><meta name="description" content="doom-emacs的配置文件(LST)"><meta property="og:title" content="doom-emacs的配置文件(LST)" />
+<meta property="og:description" content="doom-emacs的配置文件(LST)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nswy123.top/doom-emacs-configure/" /><meta property="og:image" content="https://nswy123.top/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-04T12:15:10+08:00" />
+<meta property="article:modified_time" content="2020-11-24T15:42:10+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://nswy123.top/"/>
+
+<meta name="twitter:title" content="doom-emacs的配置文件(LST)"/>
+<meta name="twitter:description" content="doom-emacs的配置文件(LST)"/>
+<meta name="application-name" content="nswy123">
+<meta name="apple-mobile-web-app-title" content="nswy123"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://nswy123.top/doom-emacs-configure/" /><link rel="prev" href="https://nswy123.top/latex/" /><link rel="next" href="https://nswy123.top/pdf%E6%93%8D%E4%BD%9C/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="q5BcEw2yTxdK8dJmgEJzJ8-vts8kA165bdHVuqhs5qM" /><meta name="msvalidate.01" content="B0B44AE9BE225A80728C76B48480B504" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "doom-emacs的配置文件(LST)",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/nswy123.top\/doom-emacs-configure\/"
+        },"image": ["https:\/\/nswy123.top\/assets\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "manjaro, doom-emacs","wordcount":  2419 ,
+        "url": "https:\/\/nswy123.top\/doom-emacs-configure\/","datePublished": "2020-11-04T12:15:10+08:00","dateModified": "2020-11-24T15:42:10+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "nswy123","logo": "https:\/\/nswy123.top\/assets\/images\/head.jpg"},"author": {
+                "@type": "Person",
+                "name": "nswy123"
+            },"description": "doom-emacs的配置文件(LST)"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="nswy123"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/friendlinks/"> 友链 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/nswy123" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="nswy123"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/friendlinks/" title="">友链</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/nswy123" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">doom-emacs的配置文件(LST)</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://nswy123.github.io" title="Author" target="_blank" rel="noopener noreferrer author" class="author"><i class="fas fa-user-circle fa-fw"></i>nswy123</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/emacs/"><i class="far fa-folder fa-fw"></i>emacs</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-04">2020-11-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2419 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/doom-emacs-configure/" class="leancloud_visitors" data-flag-title="doom-emacs的配置文件(LST)">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#configel">config.el</a></li>
+    <li><a href="#initel">init.el</a></li>
+    <li><a href="#packagesel">packages.el</a></li>
+    <li><a href="#customel">custom.el</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="configel">config.el</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Elisp" data-lang="Elisp"><span class="line"><span class="cl"><span class="c1">;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; Place your private configuration here! Remember, you do not need to run &#39;doom</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; sync&#39; after modifying this file!</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; Some functionality uses this to identify you, e.g. GPG configuration, email</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; clients, file templates and snippets.</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nf">user-full-name</span> <span class="s">&#34;nswy123&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">user-mail-address</span> <span class="s">&#34;nswy123@126.com&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; Doom exposes five (optional) variables for controlling fonts in Doom. Here</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; are the three important ones:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; + `doom-font&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; + `doom-variable-pitch-font&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; + `doom-big-font&#39; -- used for `doom-big-font-mode&#39;; use this for</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;   presentations or streaming.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; They all accept either a font-spec, font string (&#34;Input Mono-12&#34;), or xlfd</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; font string. You generally only need these two:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; (setq doom-font (font-spec :family &#34;monospace&#34; :size 12 :weight &#39;semi-light)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;       doom-variable-pitch-font (font-spec :family &#34;sans&#34; :size 13))</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-font</span> <span class="p">(</span><span class="nf">font-spec</span> <span class="nb">:family</span> <span class="s">&#34;Fira Code&#34;</span> <span class="nb">:size</span> <span class="mi">19</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;;(when (member &#34;Sarasa Nerd&#34; (font-family-list))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;  (setq doom-font (font-spec :family &#34;Sarasa Nerd&#34; :size 16)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;        doom-variable-pitch-font (font-spec :family &#34;Sarasa Nerd&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;        doom-unicode-font (font-spec :family &#34;Sarasa Nerd&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;        doom-big-font (font-spec :family &#34;Sarasa Nerd&#34; :size 20)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;;(defun +my/better-font()</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;  (interactive)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;  ;; english font</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;  (if (display-graphic-p)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;      (progn</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;        (set-face-attribute &#39;default nil :font (format &#34;%s:pixelsize=%d&#34; &#34;Fira Code&#34; 19)) ;; 11 13 17 19 23</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;        ;; chinese font</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;        (dolist (charset &#39;(kana han symbol cjk-misc bopomofo))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;          (set-fontset-font (frame-parameter nil &#39;font)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;                            charset</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;                            (font-spec :family &#34;Sarasa Mono SC&#34;)))) ;; 14 16 20 22 28</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;    ))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;(defun +my|init-font(frame)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;  (with-selected-frame frame</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;    (if (display-graphic-p)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;        (+my/better-font))))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;(if (and (fboundp &#39;daemonp) (daemonp))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;    (add-hook &#39;after-make-frame-functions #&#39;+my|init-font)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;  (+my/better-font))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; :weight &#39;semi-light)</span>
+</span></span><span class="line"><span class="cl"> <span class="c1">;;        doom-variable-pitch-font (font-spec :family &#34;sans&#34; :size 19))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;JetBrains Mono Medium,monospace</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; There are two ways to load a theme. Both assume the theme is installed and</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; available. You can either set `doom-theme&#39; or manually load a theme with the</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; `load-theme&#39; function. This is the default:</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">doom-theme</span> <span class="ss">&#39;doom-one</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; If you use `org&#39; and don&#39;t want your org files in the default location below,</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; change `org-directory&#39;. It must be set before org loads!</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">org-directory</span> <span class="s">&#34;~/org/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; This determines the style of line numbers in effect. If set to `nil&#39;, line</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; numbers are disabled. For relative line numbers, set this to `relative&#39;.</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">display-line-numbers-type</span> <span class="no">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;;org-roam dir</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">org-roam-directory</span> <span class="s">&#34;/home/du/Nutstore Files/Sync/org-mode/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;;;hungry-delete</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">require</span> <span class="ss">&#39;hungry-delete</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">global-hungry-delete-mode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;;emacs cursor</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">evil-emacs-state-cursor</span> <span class="o">&#39;</span><span class="p">(</span><span class="s">&#34;red&#34;</span> <span class="nv">bar</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;;</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">confirm-kill-emacs</span> <span class="no">nil</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; default set to emacs model.</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">setq</span> <span class="nv">evil-default-state</span> <span class="ss">&#39;emacs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">after!</span> <span class="nv">org</span> <span class="p">(</span><span class="nb">setq</span> <span class="nv">evil-normal-state-modes</span> <span class="no">nil</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; auto truncate-lines</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nf">set-default</span> <span class="ss">&#39;truncate-lines</span> <span class="no">nil</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; Here are some additional functions/macros that could help you configure Doom:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; - `load!&#39; for loading external *.el files relative to this one</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; - `use-package!&#39; for configuring packages</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; - `after!&#39; for running code after a package has loaded</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; - `add-load-path!&#39; for adding directories to the `load-path&#39;, relative to</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;   this file. Emacs searches the `load-path&#39; when you load packages with</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;   `require&#39; or `use-package&#39;.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; - `map!&#39; for binding new keys</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; To get information about any of these functions/macros, move the cursor over</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; the highlighted symbol at press &#39;K&#39; (non-evil users must press &#39;C-c c k&#39;).</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; This will open documentation for it, including demos of how they are used.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; You can also try &#39;gd&#39; (or &#39;C-c c d&#39;) to jump to their definition and see how</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; they are implemented.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; FIXME Fix for emacs 27</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; https://github.com/emacs-lsp/lsp-mode/issues/1778</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;(setq lsp-gopls-codelens nil)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="initel">init.el</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Elisp" data-lang="Elisp"><span class="line"><span class="cl"><span class="c1">;;; init.el -*- lexical-binding: t; -*-</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; This file controls what Doom modules are enabled and what order they load</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; in. Remember to run &#39;doom sync&#39; after modifying it!</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; NOTE Press &#39;SPC h d h&#39; (or &#39;C-h d h&#39; for non-vim users) to access Doom&#39;s</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;      documentation. There you&#39;ll find a &#34;Module Index&#34; link where you&#39;ll find</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;      a comprehensive list of Doom&#39;s modules and what flags they support.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; NOTE Move your cursor over a module&#39;s name (or its flags) and press &#39;K&#39; (or</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;      &#39;C-c c k&#39; for non-vim users) to view its documentation. This works on</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;      flags as well (those symbols that start with a plus).</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;      Alternatively, press &#39;gd&#39; (or &#39;C-c c d&#39;) on a module to browse its</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;      directory (for easy access to its source code).</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">doom!</span> <span class="nb">:input</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;chinese</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;japanese</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;layout            ; auie,ctsrnm is the superior home row</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:completion</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">company</span>           <span class="c1">; the ultimate code completion backend</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;helm              ; the *other* search engine for love and life</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;ido               ; the other *other* search engine...</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">ivy</span>               <span class="c1">; a search engine for love and life</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:ui</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;deft              ; notational velocity for Emacs</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">doom</span>              <span class="c1">; what makes DOOM look the way it does</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">doom-dashboard</span>    <span class="c1">; a nifty splash screen for Emacs</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">doom-quit</span>         <span class="c1">; DOOM quit-message prompts when you quit Emacs</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;fill-column       ; a `fill-column&#39; indicator</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">hl-todo</span>           <span class="c1">; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;hydra</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;indent-guides     ; highlighted indent columns</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;ligatures         ; ligatures and symbols to make your code pretty again</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;minimap           ; show a map of the code on the side</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">modeline</span>          <span class="c1">; snazzy, Atom-inspired modeline, plus API</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;nav-flash         ; blink cursor line after big motions</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;neotree           ; a project drawer, like NERDTree for vim</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">ophints</span>           <span class="c1">; highlight the region an operation acts on</span>
+</span></span><span class="line"><span class="cl">       <span class="p">(</span><span class="nv">popup</span> <span class="nv">+defaults</span><span class="p">)</span>   <span class="c1">; tame sudden yet inevitable temporary windows</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;tabs              ; a tab bar for Emacs</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;treemacs          ; a project drawer, like neotree but cooler</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;unicode           ; extended unicode support for various languages</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">vc-gutter</span>         <span class="c1">; vcs diff in the fringe</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">vi-tilde-fringe</span>   <span class="c1">; fringe tildes to mark beyond EOB</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;window-select     ; visually switch windows</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">workspaces</span>        <span class="c1">; tab emulation, persistence &amp; separate workspaces</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;zen               ; distraction-free coding or writing</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:editor</span>
+</span></span><span class="line"><span class="cl">       <span class="p">(</span><span class="nv">evil</span> <span class="nv">+everywhere</span><span class="p">)</span><span class="c1">; come to the dark side, we have cookies</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">file-templates</span>    <span class="c1">; auto-snippets for empty files</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">fold</span>              <span class="c1">; (nigh) universal code folding</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;(format +onsave)  ; automated prettiness</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;god               ; run Emacs commands without modifier keys</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;lispy             ; vim for lisp, for people who don&#39;t like vim</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;multiple-cursors  ; editing in many places at once</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;objed             ; text object editing for the innocent</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;parinfer          ; turn lisp into python, sort of</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;rotate-text       ; cycle region at point between text candidates</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">snippets</span>          <span class="c1">; my elves. They type so I don&#39;t have to</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;word-wrap         ; soft wrapping with language-aware indent</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:emacs</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">dired</span>             <span class="c1">; making dired pretty [functional]</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">electric</span>          <span class="c1">; smarter, keyword-based electric-indent</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;ibuffer         ; interactive buffer management</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">undo</span>              <span class="c1">; persistent, smarter undo for your inevitable mistakes</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">vc</span>                <span class="c1">; version-control and Emacs, sitting in a tree</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:term</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">eshell</span>            <span class="c1">; the elisp shell that works everywhere</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;shell             ; simple shell REPL for Emacs</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;term              ; basic terminal emulator for Emacs</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;vterm             ; the best terminal emulation in Emacs</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:checkers</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">syntax</span>              <span class="c1">; tasing you for every semicolon you forget</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;spell             ; tasing you for misspelling mispelling</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;grammar           ; tasing grammar mistake every you make</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:tools</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;ansible</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;debugger          ; FIXME stepping through code, to help you add bugs</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;direnv</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;docker</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;editorconfig      ; let someone else argue about tabs vs spaces</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;ein               ; tame Jupyter notebooks with emacs</span>
+</span></span><span class="line"><span class="cl">       <span class="p">(</span><span class="nf">eval</span> <span class="nv">+overlay</span><span class="p">)</span>     <span class="c1">; run code, run (also, repls)</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;gist              ; interacting with github gists</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">lookup</span>              <span class="c1">; navigate your code and its documentation</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">lsp</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">magit</span>             <span class="c1">; a git porcelain for Emacs</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;make              ; run make tasks from Emacs</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;pass              ; password manager for nerds</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">pdf</span>               <span class="c1">; pdf enhancements</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;prodigy           ; FIXME managing external services &amp; code builders</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;rgb               ; creating color strings</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;taskrunner        ; taskrunner for all your projects</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;terraform         ; infrastructure as code</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;tmux              ; an API for interacting with tmux</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;upload            ; map local to remote projects via ssh/ftp</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:os</span>
+</span></span><span class="line"><span class="cl">       <span class="p">(</span><span class="nb">:if</span> <span class="nv">IS-MAC</span> <span class="nv">macos</span><span class="p">)</span>  <span class="c1">; improve compatibility with macOS</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;tty               ; improve the terminal Emacs experience</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:lang</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;agda              ; types of types of types of types...</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;cc                ; C/C++/Obj-C madness</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;clojure           ; java with a lisp</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;common-lisp       ; if you&#39;ve seen one lisp, you&#39;ve seen them all</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;coq               ; proofs-as-programs</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;crystal           ; ruby at the speed of c</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;csharp            ; unity, .NET, and mono shenanigans</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;data              ; config/data formats</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;(dart +flutter)   ; paint ui and not much else</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;elixir            ; erlang done right</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;elm               ; care for a cup of TEA?</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">emacs-lisp</span>        <span class="c1">; drown in parentheses</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;erlang            ; an elegant language for a more civilized age</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;ess               ; emacs speaks statistics</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;faust             ; dsp, but you get to keep your soul</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;fsharp            ; ML stands for Microsoft&#39;s Language</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;fstar             ; (dependent) types and (monadic) effects and Z3</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;gdscript          ; the language you waited for</span>
+</span></span><span class="line"><span class="cl">       <span class="p">(</span><span class="nv">go</span> <span class="nv">+lsp</span><span class="p">)</span>         <span class="c1">; the hipster dialect</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;(haskell +dante)  ; a language that&#39;s lazier than I am</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;hy                ; readability of scheme w/ speed of python</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;idris             ;</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;json              ; At least it ain&#39;t XML</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;(java +meghanada) ; the poster child for carpal tunnel syndrome</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">javascript</span>        <span class="c1">; all(hope(abandon(ye(who(enter(here))))))</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;julia             ; a better, faster MATLAB</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;kotlin            ; a better, slicker Java(Script)</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">latex</span>             <span class="c1">; writing papers in Emacs has never been so fun</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;lean</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;factor</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;ledger            ; an accounting system in Emacs</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;lua               ; one-based indices? one-based indices</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">markdown</span>          <span class="c1">; writing docs for people to ignore</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;nim               ; python + lisp at the speed of c</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;nix               ; I hereby declare &#34;nix geht mehr!&#34;</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;ocaml             ; an objective camel</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">org</span>               <span class="c1">; organize your plain life in plain text</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;(org +roam)                  ; org-roam</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">php</span>               <span class="c1">; perl&#39;s insecure younger brother</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;plantuml          ; diagrams for confusing people more</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;purescript        ; javascript, but functional</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">python</span>            <span class="c1">; beautiful is better than ugly</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">qt</span>                <span class="c1">; the &#39;cutest&#39; gui framework ever</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;racket            ; a DSL for DSLs</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;raku              ; the artist formerly known as perl6</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;rest              ; Emacs as a REST client</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;rst               ; ReST in peace</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;(ruby +rails)     ; 1.step {|i| p &#34;Ruby is #{i.even? ? &#39;love&#39; : &#39;life&#39;}&#34;}</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;rust              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;scala             ; java, but good</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;scheme            ; a fully conniving family of lisps</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">sh</span>                <span class="c1">; she sells {ba,z,fi}sh shells on the C xor</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;sml</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;solidity          ; do you need a blockchain? No.</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;swift             ; who asked for emoji variables?</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;terra             ; Earth and Moon in alignment for performance.</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;web               ; the tubes</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;yaml              ; JSON, but readable</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:email</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;(mu4e +gmail)</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;notmuch</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;(wanderlust +gmail)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:app</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;calendar</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;irc               ; how neckbeards socialize</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;(rss +org)        ; emacs as an RSS reader</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;twitter           ; twitter client https://twitter.com/vnought</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="nb">:config</span>
+</span></span><span class="line"><span class="cl">       <span class="c1">;;literate</span>
+</span></span><span class="line"><span class="cl">       <span class="p">(</span><span class="nv">default</span> <span class="nv">+bindings</span> <span class="nv">+smartparens</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="packagesel">packages.el</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Elisp" data-lang="Elisp"><span class="line"><span class="cl"><span class="c1">;; -*- no-byte-compile: t; -*-</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;;; $DOOMDIR/packages.el</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; To install a package with Doom you must declare them here and run &#39;doom sync&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; on the command line, then restart Emacs for the changes to take effect -- or</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; use &#39;M-x doom/reload&#39;.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;(package! some-package)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">package!</span> <span class="nv">hungry-delete</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; To install a package directly from a remote git repo, you must specify a</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; `:recipe&#39;. You&#39;ll find documentation on what `:recipe&#39; accepts here:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; https://github.com/raxod502/straight.el#the-recipe-format</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;(package! another-package</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;  :recipe (:host github :repo &#34;username/repo&#34;))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; If the package you are trying to install does not contain a PACKAGENAME.el</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; file, or is located in a subdirectory of the repo, you&#39;ll need to specify</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; `:files&#39; in the `:recipe&#39;:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;(package! this-package</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;  :recipe (:host github :repo &#34;username/repo&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;           :files (&#34;some-file.el&#34; &#34;src/lisp/*.el&#34;)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; If you&#39;d like to disable a package included with Doom, you can do so here</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; with the `:disable&#39; property:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;(package! builtin-package :disable t)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; You can override the recipe of a built in package without having to specify</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; all the properties for `:recipe&#39;. These will inherit the rest of its recipe</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; from Doom or MELPA/ELPA/Emacsmirror:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;(package! builtin-package :recipe (:nonrecursive t))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;(package! builtin-package-2 :recipe (:repo &#34;myfork/package&#34;))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; Specify a `:branch&#39; to install a package from a particular branch or tag.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; This is required for some packages whose default branch isn&#39;t &#39;master&#39; (which</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; our package manager can&#39;t deal with; see raxod502/straight.el#279)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;(package! builtin-package :recipe (:branch &#34;develop&#34;))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; Use `:pin&#39; to specify a particular commit to install.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;(package! builtin-package :pin &#34;1a2b3c4d5e&#34;)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">;; Doom&#39;s packages are pinned to a specific commit and updated from release to</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; release. The `unpin!&#39; macro allows you to unpin single packages...</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;(unpin! pinned-package)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; ...or multiple packages</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;(unpin! pinned-package another-pinned-package)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">;(unpin! t)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="customel">custom.el</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Elisp" data-lang="Elisp"><span class="line"><span class="cl"><span class="p">(</span><span class="nv">custom-set-variables</span>
+</span></span><span class="line"><span class="cl"> <span class="c1">;; custom-set-variables was added by Custom.</span>
+</span></span><span class="line"><span class="cl"> <span class="c1">;; If you edit it by hand, you could mess it up, so be careful.</span>
+</span></span><span class="line"><span class="cl"> <span class="c1">;; Your init file should contain only one such instance.</span>
+</span></span><span class="line"><span class="cl"> <span class="c1">;; If there is more than one, they won&#39;t work right.</span>
+</span></span><span class="line"><span class="cl"> <span class="o">&#39;</span><span class="p">(</span><span class="nv">package-selected-packages</span> <span class="o">&#39;</span><span class="p">(</span><span class="nv">hungry-delete</span> <span class="nv">org-roam</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nv">custom-set-faces</span>
+</span></span><span class="line"><span class="cl"> <span class="c1">;; custom-set-faces was added by Custom.</span>
+</span></span><span class="line"><span class="cl"> <span class="c1">;; If you edit it by hand, you could mess it up, so be careful.</span>
+</span></span><span class="line"><span class="cl"> <span class="c1">;; Your init file should contain only one such instance.</span>
+</span></span><span class="line"><span class="cl"> <span class="c1">;; If there is more than one, they won&#39;t work right.</span>
+</span></span><span class="line"><span class="cl"> <span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-11-24</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nswy123.top/doom-emacs-configure/" data-title="doom-emacs的配置文件(LST)" data-hashtags="manjaro,doom-emacs"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://nswy123.top/doom-emacs-configure/" data-hashtag="manjaro"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Pinterest" data-sharer="pinterest" data-url="https://nswy123.top/doom-emacs-configure/" data-description="doom-emacs的配置文件(LST)"><i class="fab fa-pinterest fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://nswy123.top/doom-emacs-configure/"><i class="fab fa-reddit fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nswy123.top/doom-emacs-configure/" data-title="doom-emacs的配置文件(LST)"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/manjaro/">manjaro</a>,&nbsp;<a href="/tags/doom-emacs/">doom-emacs</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/latex/" class="prev" rel="prev" title="LaTeX_notes"><i class="fas fa-angle-left fa-fw"></i>LaTeX_notes</a>
+            <a href="/pdf%E6%93%8D%E4%BD%9C/" class="next" rel="next" title="Linux下PDF压缩转换等常用操作">Linux下PDF压缩转换等常用操作<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://nswy123.top/" target="_blank" rel="noopener noreferrer">nswy123</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"valine":{"appId":"hSzpoeCkSl84iDWzbj2QvB57-gzGzoHsz","appKey":"sO8QRmzW5Y9bvn11MdNQe6s4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"serverURLs":"https://hszpoeck.lc-cn-n1-shared.com","visitor":true}},"data":{"id-1":"nswy123","id-2":"nswy123"},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-172653330-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-172653330-1" async></script></body>
+</html>

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Go语言基础_切片 - nswy123</title><meta name="description" content="Go语言基础_切片"><meta property="og:title" content="Go语言基础_切片" />
+<meta property="og:description" content="Go语言基础_切片" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nswy123.top/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E5%88%87%E7%89%87/" /><meta property="og:image" content="https://nswy123.top/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-08T19:09:06+08:00" />
+<meta property="article:modified_time" content="2020-11-08T19:09:06+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://nswy123.top/"/>
+
+<meta name="twitter:title" content="Go语言基础_切片"/>
+<meta name="twitter:description" content="Go语言基础_切片"/>
+<meta name="application-name" content="nswy123">
+<meta name="apple-mobile-web-app-title" content="nswy123"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://nswy123.top/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E5%88%87%E7%89%87/" /><link rel="prev" href="https://nswy123.top/count_down/" /><link rel="next" href="https://nswy123.top/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E6%95%B0%E7%BB%84/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="q5BcEw2yTxdK8dJmgEJzJ8-vts8kA165bdHVuqhs5qM" /><meta name="msvalidate.01" content="B0B44AE9BE225A80728C76B48480B504" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Go语言基础_切片",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/nswy123.top\/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E5%88%87%E7%89%87\/"
+        },"image": ["https:\/\/nswy123.top\/assets\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Golang基础, Notes","wordcount":  3417 ,
+        "url": "https:\/\/nswy123.top\/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E5%88%87%E7%89%87\/","datePublished": "2020-11-08T19:09:06+08:00","dateModified": "2020-11-08T19:09:06+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "nswy123","logo": "https:\/\/nswy123.top\/assets\/images\/head.jpg"},"author": {
+                "@type": "Person",
+                "name": "nswy123"
+            },"description": "Go语言基础_切片"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">('false' === 'true' && window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="nswy123"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/friendlinks/"> 友链 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/nswy123" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="nswy123"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/friendlinks/" title="">友链</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/nswy123" title="GitHub" rel="noopener noreferrer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Go语言基础_切片</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://nswy123.github.io" title="Author" target="_blank" rel="noopener noreferrer author" class="author"><i class="fas fa-user-circle fa-fw"></i>nswy123</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/golang/"><i class="far fa-folder fa-fw"></i>Golang</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-08">2020-11-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3417 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E5%88%87%E7%89%87/" class="leancloud_visitors" data-flag-title="Go语言基础_切片">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#go语言基础_切片">Go语言基础_切片</a></li>
+    <li><a href="#reference">Reference:</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="go语言基础_切片">Go语言基础_切片</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span><span class="lnt">263
+</span><span class="lnt">264
+</span><span class="lnt">265
+</span><span class="lnt">266
+</span><span class="lnt">267
+</span><span class="lnt">268
+</span><span class="lnt">269
+</span><span class="lnt">270
+</span><span class="lnt">271
+</span><span class="lnt">272
+</span><span class="lnt">273
+</span><span class="lnt">274
+</span><span class="lnt">275
+</span><span class="lnt">276
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 引文
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 数组的长度固定，且数组长度属于类型的一部分，所以限制比较多
+</span></span></span><span class="line"><span class="cl"><span class="c1">// func arraySum(x [3]int) int{
+</span></span></span><span class="line"><span class="cl"><span class="c1">//    sum := 0
+</span></span></span><span class="line"><span class="cl"><span class="c1">//    for _, v := range x{
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        sum = sum + v
+</span></span></span><span class="line"><span class="cl"><span class="c1">//    }
+</span></span></span><span class="line"><span class="cl"><span class="c1">//    return sum
+</span></span></span><span class="line"><span class="cl"><span class="c1">//}
+</span></span></span><span class="line"><span class="cl"><span class="c1">//上例中数组是固定的三个int类型的值，因此调用时候只接受[3]int类型，
+</span></span></span><span class="line"><span class="cl"><span class="c1">//受限制比较多，因此引入切片。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 切片
+</span></span></span><span class="line"><span class="cl"><span class="c1">// // 1.切片是具有相同类型元素的可变长序列
+</span></span></span><span class="line"><span class="cl"><span class="c1">// // 2.切片是基于数组做了一层封装，可以自动扩容
+</span></span></span><span class="line"><span class="cl"><span class="c1">// // 3.切片是引用类型，内部结构包含地址、长度和容量
+</span></span></span><span class="line"><span class="cl"><span class="c1">// // 4.切片一般用于快速的操作一块数据集合
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 切片的底层就是数组
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 切片类型的基本语法:
+</span></span></span><span class="line"><span class="cl"><span class="c1">// var name []T
+</span></span></span><span class="line"><span class="cl"><span class="c1">// name:变量名
+</span></span></span><span class="line"><span class="cl"><span class="c1">// T:切片中的元素类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 声明切片类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">var</span> <span class="nx">a</span> <span class="p">[]</span><span class="kt">string</span>              <span class="c1">//声明一个字符串切片, 默认为nil
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">var</span> <span class="nx">b</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{}</span>             <span class="c1">//声明一个整型切片并初始化, 默认不为nil
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">var</span> <span class="nx">c</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">bool</span><span class="p">{</span><span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">}</span> <span class="c1">//声明一个布尔切片并初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">var</span> <span class="nx">d</span> <span class="p">=</span> <span class="p">[]</span><span class="kt">bool</span><span class="p">{</span><span class="kc">false</span><span class="p">,</span> <span class="kc">true</span><span class="p">}</span> <span class="c1">//声明一个布尔切片并初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>              <span class="c1">//[]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>              <span class="c1">//[]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span>              <span class="c1">//[false true]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">a</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">)</span>       <span class="c1">//true
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">b</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">)</span>       <span class="c1">//false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">c</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">)</span>       <span class="c1">//false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">d</span> <span class="o">!=</span> <span class="kc">nil</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// fmt.Println(c == d)   //切片是引用类型，不支持直接比较，只能和nil比较
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 基于数组的切片
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">e</span> <span class="o">:=</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">55</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">59</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">f</span> <span class="o">:=</span> <span class="nx">e</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="c1">//索引切片的值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%T\n&#34;</span><span class="p">,</span> <span class="nx">f</span><span class="p">)</span> <span class="c1">// %T要用printf函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;f:%v len(f):%v cap(f):%v\n&#34;</span><span class="p">,</span> <span class="nx">f</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">f</span><span class="p">),</span> <span class="nb">cap</span><span class="p">(</span><span class="nx">f</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// 切片的长度和容量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 内置函数求切片的长度和容量:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// len() // length
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// cap() //cap
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 切片表达式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 切片表达式从字符串、数组、指向数组或切片的指针构造子字符串或切片：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 1. 指定low和high两个索引界限值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 2. 除了low和high两个索引界限值外，还指定容量的完整的形式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// // 1.简单切片表达式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// // func main() {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// // a := [5]int{1, 2, 3, 4, 5}
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// // s := a[1:3]  // s := a[low:high],左包含右不包含,所以长度=high-low，
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 容量等于得到的切片的底层数组的容量,容量暂时不是很明白，我猜测是不是数组长度为5，
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 也就是0-4，所以底层数组的容量是4？切片的容量也就是4.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// // fmt.Printf(&#34;s:%v len(s):%v cap(s):%v\n&#34;, s, len(s), cap(s))
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 输出 s:[2 3] len(s):2 cap(s):4
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// Notice:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 1.类似于matlab中，若low省略则从0开始，若high省略则为切片操作数的长度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 2.数组和字符串，0 &lt;= low &lt;= high &lt;= len(a)则合法，否则越界
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 3.切片再切片的时候，high的上限是切片的容量cap(a),不是长度。常量索引必须非负
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 索引的上限是cap(s)而不是len(s)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">s2</span> <span class="o">:=</span> <span class="nx">f</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;s2:%v len(s2):%v cap(s2):%v\n&#34;</span><span class="p">,</span> <span class="nx">s2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">s2</span><span class="p">),</span> <span class="nb">cap</span><span class="p">(</span><span class="nx">s2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// s:[2 3] len(s):2 cap(s):4
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// s2:[5] len(s2):1 cap(s2):1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// s2上限为cap()，为什么值为最后一位？
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 答:见go语言实战第64页图4-12，在进行一次切片时，只看low这个值的地址，
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 这个值的地址变成了0，下一次切片的时候从这个地方开始数，high则为cap()，
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 即从low变为0的地方开始数到原数组的最后一位。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// // 2.完整切片表达式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 数组、指向数组的指针、或切片a(不能是字符串)支持
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// a[low : high : max] // a[low : high]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 上述构造的切片相同类型、相同长度、相同元素。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 完整切片的容量被设置为max-low，且只能省略low，默认为0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">t</span> <span class="o">:=</span> <span class="nx">e</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;t:%v len(t):%v cap(t)%v\n&#34;</span><span class="p">,</span> <span class="nx">t</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">t</span><span class="p">),</span> <span class="nb">cap</span><span class="p">(</span><span class="nx">t</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// t:[2 3] len(t):2 cap(t):4
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 使用make()函数构造切片
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 动态的创建切片，使用make()函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// make([]T, size, cap)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 1.T:切片的元素类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 2.size:切片中元素的数量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 3.cap:切片的容量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">g</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// length:2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// capacity:10
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">g</span><span class="p">)</span>      <span class="c1">//[0 0]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">g</span><span class="p">))</span> <span class="c1">//2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nb">cap</span><span class="p">(</span><span class="nx">g</span><span class="p">))</span> <span class="c1">//10
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 切片的本质
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 本质是对底层数组的封装，包括:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 1.底层数组的指针
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 2.切片的长度len
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 3.切片的容量cap
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 判断切片是否为空
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// len(s) == 0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 不可使用 s == nil
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 切片不能直接比较
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 不能使用==判断两个切片是否含有全部相等的元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 切片唯一可以合法比较是和nil，一个nil值的切片没有底层数组，
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 长度和容量都是0，反之不一定
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// var s1 []int         //len(s1)=0;cap(s1)=0;s1==nil
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// s2 := []int{}        //len(s2)=0;cap(s2)=0;s2!=nil
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// s3 := make([]int, 0) //len(s3)=0;cap(s3)=0;s3!=nil
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 切片的赋值拷贝
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 拷贝前后两个变量共享底层数组，对一个切片的修改影响另一个切片的内容
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// s1 := make([]int, 3) //[0 0 0]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// s2 := s1             //将s1直接赋值给s2，s1和s2共用一个底层数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// s2[0] = 100
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// fmt.Println(s1) //[100 0 0]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// fmt.Println(s2) //[100 0 0]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 切片的遍历
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 与数组一致，索引遍历和 for range 遍历
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// s := []int{1, 3, 5}
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// for i := 0; i &lt; len(s); i++ {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 		fmt.Println(i, s[i])
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// for index, value := range s {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//  	fmt.Println(index, value)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// append()方法为切片添加元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 1.动态添加元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 2.一次一个或多个元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 3.也可添加另一个切片中的元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// var s []int
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// s = append(s, 1)        // [1]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// s = append(s, 2, 3, 4)  // [1 2 3 4]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// s2 := []int{5, 6, 7}
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// s = append(s, s2...)    // [1 2 3 4 5 6 7]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 注意：通过var声明的零值切片可以在append()函数直接使用，无需初始化。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 每个切片会指向一个底层数组，这个数组的容量够用就添加新增元素。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 当底层数组不能容纳新增的元素时，切片就会自动按照一定的策略进行“扩容”，
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 此时该切片指向的底层数组就会更换。“扩容”操作往往发生在append()函数调用时，
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 所以我们通常都需要用原变量接收append函数的返回值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 举例:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// func main() {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// append()添加元素和切片扩容
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// var numSlice []int
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// for i := 0; i &lt; 10; i++ {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//  	numSlice = append(numSlice, i)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//      fmt.Printf(&#34;%v  len:%d  cap:%d  ptr:%p\n&#34;, numSlice, len(numSlice), cap(numSlice), numSlice)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// output:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// [0]  len:1  cap:1  ptr:0xc0000a8000
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// [0 1]  len:2  cap:2  ptr:0xc0000a8040
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// [0 1 2]  len:3  cap:4  ptr:0xc0000b2020
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// [0 1 2 3]  len:4  cap:4  ptr:0xc0000b2020
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// [0 1 2 3 4]  len:5  cap:8  ptr:0xc0000b6000
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// [0 1 2 3 4 5]  len:6  cap:8  ptr:0xc0000b6000
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// [0 1 2 3 4 5 6]  len:7  cap:8  ptr:0xc0000b6000
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// [0 1 2 3 4 5 6 7]  len:8  cap:8  ptr:0xc0000b6000
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// [0 1 2 3 4 5 6 7 8]  len:9  cap:16  ptr:0xc0000b8000
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// [0 1 2 3 4 5 6 7 8 9]  len:10  cap:16  ptr:0xc0000b8000
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 1.append()函数将元素追加到切片的最后并返回该切片。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 2.切片numSlice的容量按照1，2，4，8，16这样的规则自动进行扩容，
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 每次扩容后都是扩容前的2倍。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 一次追加多个元素:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// var citySlice []string
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// // 追加一个元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// citySlice = append(citySlice, &#34;北京&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// // 追加多个元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// citySlice = append(citySlice, &#34;上海&#34;, &#34;广州&#34;, &#34;深圳&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// // 追加切片
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// a := []string{&#34;成都&#34;, &#34;重庆&#34;}
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// citySlice = append(citySlice, a...)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// fmt.Println(citySlice) //[北京 上海 广州 深圳 成都 重庆]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 切片的扩容策略
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 查看源码:$GOROOT/src/runtiome/slice.go
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// newcap := old.cap
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// doublecap := newcap + newcap
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// if cap &gt; doublecap {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// newcap = cap
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// } else {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// if old.len &lt; 1024 {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 		newcap = doublecap
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// } else {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 	    // Check 0 &lt; newcap to detect overflow
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//  	// and prevent an infinite loop.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// for 0 &lt; newcap &amp;&amp; newcap &lt; cap {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 		newcap += newcap / 4
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 	}
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 	    // Set newcap to the requested cap when
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//  	// the newcap calculation overflowed.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// if newcap &lt;= 0 {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 		newcap = cap
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 	}
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 1.首先判断，如果新申请容量（cap）大于2倍的旧容量（old.cap），
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 最终容量（newcap）就是新申请的容量（cap）。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 2.否则判断，如果旧切片的长度小于1024，则
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 最终容量(newcap)就是旧容量(old.cap)的两倍，即（newcap=doublecap）,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 3.否则判断，如果旧切片长度大于等于1024，则
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 最终容量（newcap）从旧容量（old.cap）开始循环增加原来的1/4，
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 即（newcap=old.cap,for {newcap += newcap/4}）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 直到最终容量（newcap）大于等于新申请的容量(cap)，即（newcap &gt;= cap）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 4.如果最终容量（cap）计算值溢出，则最终容量（cap）就是新申请容量（cap）。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 5.需要注意的是，切片扩容还会根据切片中元素的类型不同而做不同的处理,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 比如int和string类型的处理方式就不一样。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// copy()函数复制切片
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 比如:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// a := []int{1, 2, 3, 4, 5}
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// b := a
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// fmt.Println(a) //[1 2 3 4 5]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// fmt.Println(b) //[1 2 3 4 5]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// b[0] = 1000
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// fmt.Println(a) //[1000 2 3 4 5]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// fmt.Println(b) //[1000 2 3 4 5]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 切片为引用类型，a和b指向同一个地址，修改b则a的值也变化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// go内建函数copy()可以将一个切片的data复制到另一个切片
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// copy(destSlice, srcSlice []T)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 1.srcSlice: 数据来源切片
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 2.destSlice: 目标切片
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 比如:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// // copy()复制切片
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// a := []int{1, 2, 3, 4, 5}
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// c := make([]int, 5, 5)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// copy(c, a)     //使用copy()函数将切片a中的元素复制到切片c
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// fmt.Println(a) //[1 2 3 4 5]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// fmt.Println(c) //[1 2 3 4 5]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// c[0] = 1000
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// fmt.Println(a) //[1 2 3 4 5]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// fmt.Println(c) //[1000 2 3 4 5]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 从切片中删除元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 比如:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// a := []int{30, 31, 32, 33, 34, 35, 36, 37}
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 要删除索引为2的元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// a = append(a[:2], a[3:]...)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// fmt.Println(a) //[30 31 33 34 35 36 37]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 要从切片a中删除索引为index的元素，
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// 操作方法是a = append(a[:index], a[index+1:]...)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// ex1.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">var</span> <span class="nx">h</span> <span class="p">=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">string</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">h</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">h</span><span class="p">,</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%v&#34;</span><span class="p">,</span> <span class="nx">i</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;h is:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">h</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// [     0 1 2 3 4 5 6 7 8 9]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="reference">Reference:</h2>
+<p><a href="https://www.liwenzhou.com/posts/Go/06_slice/" target="_blank" rel="noopener noreferrer">李文周的博客</a></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-11-08</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://nswy123.top/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E5%88%87%E7%89%87/" data-title="Go语言基础_切片" data-hashtags="Golang基础,Notes"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://nswy123.top/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E5%88%87%E7%89%87/" data-hashtag="Golang基础"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Pinterest" data-sharer="pinterest" data-url="https://nswy123.top/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E5%88%87%E7%89%87/" data-description="Go语言基础_切片"><i class="fab fa-pinterest fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://nswy123.top/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E5%88%87%E7%89%87/"><i class="fab fa-reddit fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://nswy123.top/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E5%88%87%E7%89%87/" data-title="Go语言基础_切片"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/golang%E5%9F%BA%E7%A1%80/">Golang基础</a>,&nbsp;<a href="/tags/notes/">Notes</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/count_down/" class="prev" rel="prev" title="shell-倒计时程序"><i class="fas fa-angle-left fa-fw"></i>shell-倒计时程序</a>
+            <a href="/go%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80_%E6%95%B0%E7%BB%84/" class="next" rel="next" title="Go语言基础_数组">Go语言基础_数组<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://nswy123.top/" target="_blank" rel="noopener noreferrer">nswy123</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":100},"comment":{"valine":{"appId":"hSzpoeCkSl84iDWzbj2QvB57-gzGzoHsz","appKey":"sO8QRmzW5Y9bvn11MdNQe6s4","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"serverURLs":"https://hszpoeck.lc-cn-n1-shared.com","visitor":true}},"data":{"id-1":"nswy123","id-2":"nswy123"},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.zh-cn","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-172653330-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-172653330-1" async></script></body>
+</html>
